@@ -1,0 +1,12 @@
+{
+  "schema": "abyss-version-v1",
+  "versionName": "0.1.0",
+  "versionCode": 1,
+  "tag": "v0.1.0",
+  "publishedAt": "2026-10-30T13:45:00Z",
+  "channel": "framework-preview",
+  "notes": "深渊工具 v0.1.0 框架预览版：液态玻璃 M3 主界面（仪表盘/导航/设置三 tab + 玻璃底栏）、十分类工具导航（插件恒第一分类）、插件中心与安装 AP 流水线框架、补丁更新引擎（abyss-patch-v1）。APK 与增量补丁资产自 v0.2 发布流水线起发布 —— 当前通道仅含清单骨架，客户端「检查更新」将得到人话提示。",
+  "download": null,
+  "patch": null,
+  "commitSha": null
+}

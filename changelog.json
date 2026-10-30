@@ -1,0 +1,21 @@
+{
+  "schema": "abyss-changelog-v1",
+  "generatedAt": "2026-10-30T13:45:00Z",
+  "latest": {
+    "versionName": "0.1.0",
+    "versionCode": 1,
+    "tag": "v0.1.0",
+    "date": "2026-10-30",
+    "title": "v0.1.0 框架预览版 —— 主界面 / 插件框架 / 补丁更新引擎",
+    "notes": [
+      "液态玻璃 Material 3 主界面：仪表盘 / 导航 / 设置三 tab + Kyant0 backdrop 玻璃底栏（blur + lens 真实折射）",
+      "十分类工具导航目录（插件恒为第一分类），19 项工具登记，插件承载 / 路线图双态",
+      "插件中心：13 个大插件仓库聚合索引（plugins.json）+ 插件详情 + 安装 AP 流水线框架（下载/SHA-256 校验/安装网关）",
+      "补丁更新引擎：version.json 客户端比对 + abyss-patch-v1 数据补丁（备份/回滚/路径穿越拒绝）",
+      "双仓库发布体系成型：开发仓 CI → 发布仓清单 → 客户端增量补丁（APK 资产自 v0.2 起）"
+    ],
+    "markdown": "## v0.1.0 框架预览版 —— 主界面 / 插件框架 / 补丁更新引擎\n\n- 液态玻璃 Material 3 主界面：仪表盘 / 导航 / 设置三 tab + Kyant0 backdrop 玻璃底栏（blur + lens 真实折射）\n- 十分类工具导航目录（插件恒为第一分类），19 项工具登记，插件承载 / 路线图双态\n- 插件中心：13 个大插件仓库聚合索引（plugins.json）+ 插件详情 + 安装 AP 流水线框架（下载/SHA-256 校验/安装网关）\n- 补丁更新引擎：version.json 客户端比对 + abyss-patch-v1 数据补丁（备份/回滚/路径穿越拒绝）\n- 双仓库发布体系成型：开发仓 CI → 发布仓清单 → 客户端增量补丁（APK 资产自 v0.2 起）",
+    "releaseUrl": "https://github.com/Ultra-Guru/Abyss-Tools-Release/releases/tag/v0.1.0"
+  },
+  "history": []
+}

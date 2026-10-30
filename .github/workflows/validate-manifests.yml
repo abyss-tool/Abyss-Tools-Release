@@ -1,0 +1,24 @@
+name: Validate Manifests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: manifests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: 发布仓清单门禁
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate version / patches / changelog
+        run: python3 tools/validate_manifests.py
