@@ -1,12 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.1.0",
-  "versionCode": 1,
-  "tag": "v0.1.0",
-  "publishedAt": "2026-10-30T13:45:00Z",
-  "channel": "framework-preview",
-  "notes": "深渊工具 v0.1.0 框架预览版：液态玻璃 M3 主界面（仪表盘/导航/设置三 tab + 玻璃底栏）、十分类工具导航（插件恒第一分类）、插件中心与安装 AP 流水线框架、补丁更新引擎（abyss-patch-v1）。APK 与增量补丁资产自 v0.2 发布流水线起发布 —— 当前通道仅含清单骨架，客户端「检查更新」将得到人话提示。",
-  "download": null,
+  "versionName": "0.1.1",
+  "versionCode": 2,
+  "tag": "v0.1.1",
+  "publishedAt": "2026-10-31T01:55:29Z",
+  "channel": "stable",
+  "notes": "真实 APK 安装网关：PackageInstaller 会话 + 同签名门禁 + 未知来源确认页自动转发 + 结果广播等待；插件数据层安装与卸载闭环：manifest 校验后原子落盘，插件中心「我的插件」分区与版本账本；插件补丁应用闭环：下载 → SHA-256 校验 → 备份 → 应用 → 失败自动回滚，PatchReport 摘要直观可见；宿主自更新整包流水线：检查更新 → 下载 → 校验 → 系统安装器安装（设置页一键完成）；更新日志通道：changelog.json 消费 + 设置页更新日志查看器（latest + history）；发布流水线成型：入库 keystore 恒定签名 + release.yml 双仓库发布 + 版本三处同步门禁；插件生态工作流：13 仓补丁发布流水线（patch-release）+ 插件中心索引自动聚合（sync-index）",
+  "download": {
+    "url": "https://github.com/Ultra-Guru/Abyss-Tools-Release/releases/download/v0.1.1/abyss-tools-v0.1.1.apk",
+    "sizeBytes": 12986715,
+    "sha256": "3611abc0962c350f7c8dc9bd67204c77ad3fc4d2b912d06fff8e0fec468224ee"
+  },
   "patch": null,
-  "commitSha": null
+  "commitSha": "195aa2902696523874a0a9771ee4c82a17aca442"
 }
