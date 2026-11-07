@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.7.0",
-  "versionCode": 8,
-  "tag": "v0.7.0",
-  "publishedAt": "2026-11-07T13:59:54Z",
+  "versionName": "0.7.1",
+  "versionCode": 9,
+  "tag": "v0.7.1",
+  "publishedAt": "2026-11-07T14:18:30Z",
   "channel": "stable",
-  "notes": "v0.7.0 —— P0 闪退修复：ShizukuProvider 补声明（伪装四件套在旧版实际不可用的根因）；v0.7.0 —— 崩溃防护网：未捕获异常全量落盘 files/crash/，设置页「诊断」可查看 / 清除（侧载渠道闪退可取证）；v0.7.0 —— 下载镜像系统：国内反代（ghfast/ghproxy 系 + raw.gitmirror）+ 插件中心「测速」TTFB 实测 + 自动择优 / 手动锁定；v0.7.0 —— 镜像回退链：单镜像失败自动换下一镜像（含 2 分钟失败冷却记忆），GitHub 直连恒为兜底；v0.7.0 —— 镜像信任锚不松动：镜像域白名单（FetchHostPolicy 联动递归校验）+ 全资产 SHA-256 fail-closed 照旧；v0.7.0 —— 自动发布流水线：PR 合并即自动发版（版本推进 / 构建 / 双仓发布），APK 同存发布仓与主仓；v0.7.0 —— publish_release.py：--mirror-to-repo 双仓发布（发布仓通道三件套 + 主仓同 tag APK 镜像）；v0.7.0 —— ⚠ 签名迁移提示：v0.3.0 及更早版本由旧证书签名，本版起恒为 meng411722 身份 —— 老用户请先卸载旧版再安装（直接覆盖安装会因签名不同被系统拒绝），插件数据不受影响；v0.7.0 —— fix(core:plugin)：插件中心「幽灵插件」修复 —— 补丁备份目录被误枚举为已装插件（时隐时现的根因）",
+  "notes": "v0.7.1 —— publish 流水线加固：APK 快照（不可变临时路径）+ 双仓资产摘要回读比对（fail-closed，杜绝通道清单指向校验必失败的资产）；v0.7.1 —— 本次为自动发布管线的版本递增全路径验证（patch 0.7.0 → 0.7.1，versionCode 8 → 9）；App 功能与 v0.7.0 一致",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.0/abyss-tools-v0.7.0.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.1/abyss-tools-v0.7.1.apk",
     "sizeBytes": 13765585,
-    "sha256": "e4b46a8b5efbb5c2b0068340e6c50206f3b75a6efcf872da26459064aab2171a"
+    "sha256": "25bba060acb629205540ff2cc765c654dcb65402e6405a4233f6ed5163c0e719"
   },
   "patch": null,
-  "commitSha": "2478ed19831df8402d61074dd0859ceccd2f86e1"
+  "commitSha": "605e80736fddab36e40ea3d64014fb23c7ccf767"
 }
