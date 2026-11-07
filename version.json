@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.3.0",
-  "versionCode": 4,
-  "tag": "v0.3.0",
-  "publishedAt": "2026-11-07T01:50:35Z",
+  "versionName": "0.7.0",
+  "versionCode": 8,
+  "tag": "v0.7.0",
+  "publishedAt": "2026-11-07T13:59:54Z",
   "channel": "stable",
-  "notes": "# v0.3.0 —— 伪装四件套内置 + 新手引导；- 伪装电量内置：dumpsys battery 引擎（等级 / 充电状态 / 强制拔电 / 一键恢复），全系统生效、重启自恢复；- 伪装定位内置：Fake GPS 同款官方通道 —— Shizuku 授予 mock_location 资格 + 前台服务对 gps / network / fused 三源持续注入，支持微漂移（±3 米）与常用城市预设；- 伪装信号内置：飞行模式 / 移动数据 / Wi-Fi 真实开关（cmd connectivity + svc 官方通道），含 Android 8~10 回退命令；- 伪装机型内置：真机信息一览 + 十款旗舰档案库 + 系统设备名改写（Settings.Global.DEVICE_NAME）+ 档案导出（abyss-model-profile-v1，沙箱 Hook 层消费）；- 新手引导：首启权限一站式申请（免责声明 → Shizuku 授权 → 安装未知应用 → 可选定位 / 通知），完成前不进主界面；- 仪表盘 Shizuku / 安装权限徽章真实化（原框架占位）；设置页新增「权限与引导 · 重新运行新手引导」；- 新增 core:shell 模块（Shizuku adb shell 网关 + 纯 Kotlin 指令编排，单测覆盖引用安全 / fail-closed 解析）；- 插件中心收缩至七大插件：abyss-plugin-disguise 仓库归档，能力以伪装四件套形态并入主壳（ToolStatus.BUILT_IN）",
+  "notes": "v0.7.0 —— P0 闪退修复：ShizukuProvider 补声明（伪装四件套在旧版实际不可用的根因）；v0.7.0 —— 崩溃防护网：未捕获异常全量落盘 files/crash/，设置页「诊断」可查看 / 清除（侧载渠道闪退可取证）；v0.7.0 —— 下载镜像系统：国内反代（ghfast/ghproxy 系 + raw.gitmirror）+ 插件中心「测速」TTFB 实测 + 自动择优 / 手动锁定；v0.7.0 —— 镜像回退链：单镜像失败自动换下一镜像（含 2 分钟失败冷却记忆），GitHub 直连恒为兜底；v0.7.0 —— 镜像信任锚不松动：镜像域白名单（FetchHostPolicy 联动递归校验）+ 全资产 SHA-256 fail-closed 照旧；v0.7.0 —— 自动发布流水线：PR 合并即自动发版（版本推进 / 构建 / 双仓发布），APK 同存发布仓与主仓；v0.7.0 —— publish_release.py：--mirror-to-repo 双仓发布（发布仓通道三件套 + 主仓同 tag APK 镜像）；v0.7.0 —— ⚠ 签名迁移提示：v0.3.0 及更早版本由旧证书签名，本版起恒为 meng411722 身份 —— 老用户请先卸载旧版再安装（直接覆盖安装会因签名不同被系统拒绝），插件数据不受影响；v0.7.0 —— fix(core:plugin)：插件中心「幽灵插件」修复 —— 补丁备份目录被误枚举为已装插件（时隐时现的根因）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.3.0/abyss-tools-v0.3.0.apk",
-    "sizeBytes": 13135126,
-    "sha256": "3f554d48ac7c06c9e7443ee3a702e6196657351c58174c19e4d7793e5c10f0aa"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.0/abyss-tools-v0.7.0.apk",
+    "sizeBytes": 13765585,
+    "sha256": "e4b46a8b5efbb5c2b0068340e6c50206f3b75a6efcf872da26459064aab2171a"
   },
   "patch": null,
-  "commitSha": "3e48d7674fb1b0ae77040547a60cffd46c297121"
+  "commitSha": "2478ed19831df8402d61074dd0859ceccd2f86e1"
 }
