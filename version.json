@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.7.2",
-  "versionCode": 10,
-  "tag": "v0.7.2",
-  "publishedAt": "2026-11-08T04:14:23Z",
+  "versionName": "0.7.3",
+  "versionCode": 11,
+  "tag": "v0.7.3",
+  "publishedAt": "2026-11-08T06:46:05Z",
   "channel": "stable",
-  "notes": "v0.7.2 —— P0 修复：启动秒闪退（RenderThread SIGSEGV 栈溢出）—— 玻璃件位于自身采样源内部导致显示列表每帧嵌套一层、无界增长，RenderThread 递归 prepareTree 爆栈；vendored backdrop 库加自录制重入防线，录制期间跳过同一 backdrop 的采样绘制，树深恒定有界；v0.7.2 —— 修复位点：vendor:backdrop 三处协同 —— LayerBackdrop.isRecordingSelf 标志 + drawBackdrop 早退守卫（崩溃防火墙）；LayerBackdropNode 录制期 save/restore 置位（防多源共用 backdrop 时内层提前复位）；DrawBackdropNode 录制期整体跳过（采样面/tint/内容不进录制，杜绝玻璃件自身残影被采样的重影）；v0.7.2 —— 视觉保持：live 绘制阶段不受影响 —— 仪表盘更新卡 / 插件详情 Hero / 悬浮底栏的真实折射（blur + lens + 霜面）全部保留；仅\"源内部玻璃件\"的采样语义对齐上游（backdrop = 玻璃背后的内容）；v0.7.2 —— 证据：bugreport PLE110（OPPO，Android 16，2026-11-08）三连崩 tombstone —— Fatal signal 11 code 2 (SEGV_ACCERR)，Cause: stack overflow，512 帧 backtrace 呈 prepareListAndChildren ↔ prepareTreeImpl 交替；首次存活 22s、复启 1~5s 必崩（Crossfade 启动动画失效风暴加速录制增长）",
+  "notes": "v0.7.3 —— 渲染安全模式断路器（P0 加固）：从「进程死亡 → 秒级重启」的外部特征识别闪退循环（Java / 原生崩溃全适用，不依赖崩溃类型），连续 3 次快速冷启动（间隔 <20s）自动进入安全模式 —— 禁用全部液态玻璃采样与 RenderEffect（Frosted 降级档），保证主壳能打开、诊断可读，「App 永远能打开」成为硬保证；v0.7.3 —— 恢复语义：会话存活 45 秒自动清零（下次冷启动恢复正常渲染档）；设置 → 诊断 新增安全模式状态展示（触发原因 / 快速重启计数）与手动重置；触发时主界面顶部横幅人话告知降级原因与恢复路径；v0.7.3 —— 实现纪律：core:common 新增 RenderSafeMode（纯 JVM 可单测，三行文本状态文件，一切 IO runCatching 静默兜底 —— 断路器自身绝不成为新崩溃源，fail-open）；MainActivity 进程门闩区分冷启动 / 温重建（旋转不计数）；AbyssRoot 新增 glassEnabled 参数（false → backdrop=null → 全玻璃件 Frosted）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.2/abyss-tools-v0.7.2.apk",
-    "sizeBytes": 13765585,
-    "sha256": "1a14a11dec07519b10001dcd858ca7b39bae533d526f6587f9e111722b8f772c"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.3/abyss-tools-v0.7.3.apk",
+    "sizeBytes": 13781969,
+    "sha256": "e2f9029fb8518efa2008b6d0a86e89f7edc1ab48429f2602d7b68c05e2cff266"
   },
   "patch": null,
-  "commitSha": "2cc7997f7a4692bcf6a705aa5b2ce5dfbe20be91"
+  "commitSha": "76dd12f83dad88109e39b16c16c28c06a1bbb8c5"
 }
