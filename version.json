@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.7.1",
-  "versionCode": 9,
-  "tag": "v0.7.1",
-  "publishedAt": "2026-11-07T14:18:30Z",
+  "versionName": "0.7.2",
+  "versionCode": 10,
+  "tag": "v0.7.2",
+  "publishedAt": "2026-11-08T04:14:23Z",
   "channel": "stable",
-  "notes": "v0.7.1 —— publish 流水线加固：APK 快照（不可变临时路径）+ 双仓资产摘要回读比对（fail-closed，杜绝通道清单指向校验必失败的资产）；v0.7.1 —— 本次为自动发布管线的版本递增全路径验证（patch 0.7.0 → 0.7.1，versionCode 8 → 9）；App 功能与 v0.7.0 一致",
+  "notes": "v0.7.2 —— P0 修复：启动秒闪退（RenderThread SIGSEGV 栈溢出）—— 玻璃件位于自身采样源内部导致显示列表每帧嵌套一层、无界增长，RenderThread 递归 prepareTree 爆栈；vendored backdrop 库加自录制重入防线，录制期间跳过同一 backdrop 的采样绘制，树深恒定有界；v0.7.2 —— 修复位点：vendor:backdrop 三处协同 —— LayerBackdrop.isRecordingSelf 标志 + drawBackdrop 早退守卫（崩溃防火墙）；LayerBackdropNode 录制期 save/restore 置位（防多源共用 backdrop 时内层提前复位）；DrawBackdropNode 录制期整体跳过（采样面/tint/内容不进录制，杜绝玻璃件自身残影被采样的重影）；v0.7.2 —— 视觉保持：live 绘制阶段不受影响 —— 仪表盘更新卡 / 插件详情 Hero / 悬浮底栏的真实折射（blur + lens + 霜面）全部保留；仅\"源内部玻璃件\"的采样语义对齐上游（backdrop = 玻璃背后的内容）；v0.7.2 —— 证据：bugreport PLE110（OPPO，Android 16，2026-11-08）三连崩 tombstone —— Fatal signal 11 code 2 (SEGV_ACCERR)，Cause: stack overflow，512 帧 backtrace 呈 prepareListAndChildren ↔ prepareTreeImpl 交替；首次存活 22s、复启 1~5s 必崩（Crossfade 启动动画失效风暴加速录制增长）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.1/abyss-tools-v0.7.1.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.2/abyss-tools-v0.7.2.apk",
     "sizeBytes": 13765585,
-    "sha256": "25bba060acb629205540ff2cc765c654dcb65402e6405a4233f6ed5163c0e719"
+    "sha256": "1a14a11dec07519b10001dcd858ca7b39bae533d526f6587f9e111722b8f772c"
   },
   "patch": null,
-  "commitSha": "605e80736fddab36e40ea3d64014fb23c7ccf767"
+  "commitSha": "2cc7997f7a4692bcf6a705aa5b2ce5dfbe20be91"
 }
