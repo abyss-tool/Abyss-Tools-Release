@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.8.0",
-  "versionCode": 17,
-  "tag": "v0.8.0",
-  "publishedAt": "2026-11-15T05:58:41Z",
+  "versionName": "0.8.1",
+  "versionCode": 18,
+  "tag": "v0.8.1",
+  "publishedAt": "2026-11-15T06:18:19Z",
   "channel": "stable",
-  "notes": "feat(app): 玻璃采样收敛 —— 真实液态玻璃仅底栏,页内玻璃卡全 Frosted",
+  "notes": "v0.8.1 —— 备份迁移真实功能页（替换 v0.8.0 通用占位）：主壳配置包 = 任务蓝图 JSON + 渲染探针现场 + 安全模式状态，abyss-backup-v1 zip 经 SAF 导入导出（零存储权限）；恢复只回放 blueprints/（取证是现场记录，不回放），两阶段原子落位（解包零触碰 → 逐文件 tmp→rename）；v0.8.1 —— 备份 zip 引擎 fail-closed（纯 JVM 可单测）：路径穿越 / 反斜杠 / 绝对路径 / 非白名单字符整包拒绝（预检阶段零触碰目标）；zip bomb 三重上限（条目 512 / 单文件 8MB / 总量 64MB）；打包 tmp→rename 半截包永不落盘；11 个单测覆盖 roundtrip 与全部拒绝语义；v0.8.1 —— APK 资料库导出：已装应用 base APK 经 PackageManager sourceDir 直拷到 SAF 所选位置（无需授权），用户应用默认 + 系统应用开关；诚实边界：split APK 应用仅导 base 不完整，应用私有数据抽取属系统边界（插件路线）；v0.8.1 —— 模块与路由：新增 feature:backup（纯 JVM zip 引擎 + Compose 页），AbyssRoot 接通 ID_BACKUP 真实路由（此前 v0.8.0 九个新内置工具全部落在通用占位页）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.8.0/abyss-tools-v0.8.0.apk",
-    "sizeBytes": 13798353,
-    "sha256": "3c343a48c5acfc996c25acc50ddac314adc51043a32410c854128752f2453c07"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.8.1/abyss-tools-v0.8.1.apk",
+    "sizeBytes": 13831121,
+    "sha256": "90203526cbaf7e4e14cf3e77bdec1230cab394b194bc68133f9f8dec5d05521b"
   },
   "patch": null,
-  "commitSha": "40a180d26fef5185de2e16e8d79ef387919d61eb"
+  "commitSha": "f5e4c0823436808e13a7b4124be3238a1eb79f32"
 }
