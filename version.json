@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.8.3",
-  "versionCode": 20,
-  "tag": "v0.8.3",
-  "publishedAt": "2026-11-15T07:05:11Z",
+  "versionName": "0.8.4",
+  "versionCode": 21,
+  "tag": "v0.8.4",
+  "publishedAt": "2026-11-15T07:41:07Z",
   "channel": "stable",
-  "notes": "fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
+  "notes": "fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.8.3/abyss-tools-v0.8.3.apk",
-    "sizeBytes": 14243849,
-    "sha256": "ab6afb9e91edcf0760c11b95ba1f91549e7d027698640c118969f184e485434e"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.8.4/abyss-tools-v0.8.4.apk",
+    "sizeBytes": 14260233,
+    "sha256": "f8c25d60aac12534cb216575ff085105f266edda08dd489485c1e93681f83da8"
   },
   "patch": null,
-  "commitSha": "ff57fbf4f6f36394acac6ba1c22460c75dda1ffd"
+  "commitSha": "4d9b4a244d66deecd410316d71e97f85e5f93d2c"
 }
