@@ -1,19 +1,31 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-15T06:57:53Z",
+  "generatedAt": "2026-11-15T07:05:11Z",
   "latest": {
-    "versionName": "0.8.2",
-    "versionCode": 19,
-    "tag": "v0.8.2",
+    "versionName": "0.8.3",
+    "versionCode": 20,
+    "tag": "v0.8.3",
     "date": "2026-11-15",
-    "title": "v0.8.2 —— fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复",
+    "title": "v0.8.3 —— fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
     "notes": [
-      "fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复"
+      "fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM"
     ],
-    "markdown": "- fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.2"
+    "markdown": "- fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.3"
   },
   "history": [
+    {
+      "versionName": "0.8.2",
+      "versionCode": 19,
+      "tag": "v0.8.2",
+      "date": "2026-11-15",
+      "title": "v0.8.2 —— fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复",
+      "notes": [
+        "fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复"
+      ],
+      "markdown": "- fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.2"
+    },
     {
       "versionName": "0.8.1",
       "versionCode": 18,
