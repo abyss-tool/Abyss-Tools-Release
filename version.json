@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.8.2",
-  "versionCode": 19,
-  "tag": "v0.8.2",
-  "publishedAt": "2026-11-15T06:57:53Z",
+  "versionName": "0.8.3",
+  "versionCode": 20,
+  "tag": "v0.8.3",
+  "publishedAt": "2026-11-15T07:05:11Z",
   "channel": "stable",
-  "notes": "fix(designsystem): ColorScheme 导入对齐 material3 —— ChipTone 色角色映射编译修复",
+  "notes": "fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.8.2/abyss-tools-v0.8.2.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.8.3/abyss-tools-v0.8.3.apk",
     "sizeBytes": 14243849,
-    "sha256": "fa4745c1c0869d13ef2110b5ac05486f562fd4e3a9e4a46588d68badb47b3239"
+    "sha256": "ab6afb9e91edcf0760c11b95ba1f91549e7d027698640c118969f184e485434e"
   },
   "patch": null,
-  "commitSha": "7fe8a5702664b88eb7da6ae7bdd93fe720f6b23e"
+  "commitSha": "ff57fbf4f6f36394acac6ba1c22460c75dda1ffd"
 }
