@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.7.7",
-  "versionCode": 15,
-  "tag": "v0.7.7",
-  "publishedAt": "2026-11-15T05:16:41Z",
+  "versionName": "0.7.8",
+  "versionCode": 16,
+  "tag": "v0.7.8",
+  "publishedAt": "2026-11-15T05:46:14Z",
   "channel": "stable",
-  "notes": "docs(release): v0.7.6 要点补充 —— 插件中心死点击修复 / 双页错峰 / 伪装选项件手感",
+  "notes": "v0.7.8 —— 覆盖更新下载健壮性（P0）：整包下载改走 .part 暂存 + HTTP Range 断点续传 + 成功后原子改名 —— 国内镜像链 30 MB 整包半途而废不再从零重下，重试自动从断点续传；只认 206 命中才续传（歧义一律重下，绝不把错位字节拼进 APK），决策逻辑纯函数化 + 单测；v0.7.8 —— 覆盖安装期望门禁（P0）：新增 InstallExpectation —— APK versionCode 必须与通道清单严格一致（镜像资产错位 / 通道未滚动 / 指错版本，在进入系统安装器之前就地拦截，不再依赖难懂的 INSTALL_FAILED_VERSION_DOWNGRADE 错误码）；再核对不降级（待装版本低于在装版本直接拒绝）；v0.7.8 —— 更新缓存纪律：downloadVerifiedApk 统一「下载 → SHA-256 内聚校验 → 失败即弃缓存」—— 坏文件与 .part 残留不再占坑；缓存命中（同资产已校验通过）秒回，安装失败重试不重付 30 MB 流量；安装成功即释放缓存；v0.7.8 —— 更新 UI 诚实化：整包按钮显示体积（下载并安装整包 · 24.6 MB）；「支持增量补丁升级」改为诚实表述（客户端 vcdiff 合成引擎接入前，通道增量资产本次仍走整包安装）；下载中提示「中断自动续传」；v0.7.8 —— 渲染探针收尾（另一工作流交付）：GlassProbe 挂载早于 setContent，玻璃档位 glassEnabled / lensEnabled 双参数接线，NO_LENS 档轻量横幅（与全 Frosted 横幅互斥），设置 → 诊断 新增玻璃管线探针卡片（里程碑摘要 + 现场全文 + 清除）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.7/abyss-tools-v0.7.7.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.7.8/abyss-tools-v0.7.8.apk",
     "sizeBytes": 13798353,
-    "sha256": "f746ce4ea7e4d529e97ddf493b1bb1844bcdc972c8b650a8a4f4c5ec861e8621"
+    "sha256": "920f64ee7c17311ee70bd9b075ff020767a25a350ccc565291525d4ee5016ee4"
   },
   "patch": null,
-  "commitSha": "22694794adc7fa346c317e769f8e858dd3ca13ed"
+  "commitSha": "98dc871dd82ae3b9cd5c6df4f77a31db51c1900a"
 }
