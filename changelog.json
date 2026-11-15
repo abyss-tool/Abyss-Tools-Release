@@ -1,19 +1,31 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-15T07:05:11Z",
+  "generatedAt": "2026-11-15T07:41:07Z",
   "latest": {
-    "versionName": "0.8.3",
-    "versionCode": 20,
-    "tag": "v0.8.3",
+    "versionName": "0.8.4",
+    "versionCode": 21,
+    "tag": "v0.8.4",
     "date": "2026-11-15",
-    "title": "v0.8.3 —— fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
+    "title": "v0.8.4 —— fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
     "notes": [
-      "fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM"
+      "fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在"
     ],
-    "markdown": "- fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.3"
+    "markdown": "- fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.4"
   },
   "history": [
+    {
+      "versionName": "0.8.3",
+      "versionCode": 20,
+      "tag": "v0.8.3",
+      "date": "2026-11-15",
+      "title": "v0.8.3 —— fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
+      "notes": [
+        "fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM"
+      ],
+      "markdown": "- fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.3"
+    },
     {
       "versionName": "0.8.2",
       "versionCode": 19,
