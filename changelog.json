@@ -1,19 +1,31 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-15T07:41:07Z",
+  "generatedAt": "2026-11-15T08:05:15Z",
   "latest": {
-    "versionName": "0.8.4",
-    "versionCode": 21,
-    "tag": "v0.8.4",
+    "versionName": "0.8.5",
+    "versionCode": 22,
+    "tag": "v0.8.5",
     "date": "2026-11-15",
-    "title": "v0.8.4 —— fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
+    "title": "v0.8.5 —— feat(designsystem): 液滴手感三处调优 + M3 档容器色覆写",
     "notes": [
-      "fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在"
+      "feat(designsystem): 液滴手感三处调优 + M3 档容器色覆写"
     ],
-    "markdown": "- fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.4"
+    "markdown": "- feat(designsystem): 液滴手感三处调优 + M3 档容器色覆写",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.5"
   },
   "history": [
+    {
+      "versionName": "0.8.4",
+      "versionCode": 21,
+      "tag": "v0.8.4",
+      "date": "2026-11-15",
+      "title": "v0.8.4 —— fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
+      "notes": [
+        "fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在"
+      ],
+      "markdown": "- fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.4"
+    },
     {
       "versionName": "0.8.3",
       "versionCode": 20,
