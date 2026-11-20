@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.2",
-  "versionCode": 25,
-  "tag": "v0.9.2",
-  "publishedAt": "2026-11-20T15:43:53Z",
+  "versionName": "0.9.3",
+  "versionCode": 26,
+  "tag": "v0.9.3",
+  "publishedAt": "2026-11-20T15:54:35Z",
   "channel": "stable",
-  "notes": "refactor(*): 全仓 121 处裸圆角迁入 M3 形状阶梯 —— 圆角语言单一事实源",
+  "notes": "Merge pull request #3 from abyss-tool/feat/shizuku-variants-ux",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.2/abyss-tools-v0.9.2.apk",
-    "sizeBytes": 14348073,
-    "sha256": "f73a60001881ab3e192c68a2b6d048d76e098485adc1da2a6e118b0366b90ce5"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.3/abyss-tools-v0.9.3.apk",
+    "sizeBytes": 14364525,
+    "sha256": "c5f2580f1dae5a3183997177b4151a2dd51e68cc9852a53426163f523091cd8a"
   },
   "patch": null,
-  "commitSha": "f0b3210a338376f532208af6b2b54fa1b9ce788b"
+  "commitSha": "6e0a58d2f02a34ee87ac856573bc8bbb0b8df9b2"
 }
