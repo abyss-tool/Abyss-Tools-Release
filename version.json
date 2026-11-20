@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.3",
-  "versionCode": 26,
-  "tag": "v0.9.3",
-  "publishedAt": "2026-11-20T15:54:35Z",
+  "versionName": "0.9.4",
+  "versionCode": 27,
+  "tag": "v0.9.4",
+  "publishedAt": "2026-11-20T16:08:37Z",
   "channel": "stable",
-  "notes": "Merge pull request #3 from abyss-tool/feat/shizuku-variants-ux",
+  "notes": "fix(ui): 区块标题与卡片同框堆叠 —— 全仓「文字重叠」病灶根修",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.3/abyss-tools-v0.9.3.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.4/abyss-tools-v0.9.4.apk",
     "sizeBytes": 14364525,
-    "sha256": "c5f2580f1dae5a3183997177b4151a2dd51e68cc9852a53426163f523091cd8a"
+    "sha256": "d042b799567efe80cea129f186568354b74e63236cc02f88f5d916463ad6c23f"
   },
   "patch": null,
-  "commitSha": "6e0a58d2f02a34ee87ac856573bc8bbb0b8df9b2"
+  "commitSha": "c582fbcbb4a04c1fb76a60bb8ed1b1fa8d7ca800"
 }
