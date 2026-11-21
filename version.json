@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.7",
-  "versionCode": 30,
-  "tag": "v0.9.7",
-  "publishedAt": "2026-11-21T09:01:09Z",
+  "versionName": "0.9.8",
+  "versionCode": 31,
+  "tag": "v0.9.8",
+  "publishedAt": "2026-11-21T09:18:22Z",
   "channel": "stable",
-  "notes": "feat(ui): 白色液态玻璃导航栏（浅/深双档）",
+  "notes": "refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.7/abyss-tools-v0.9.7.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.8/abyss-tools-v0.9.8.apk",
     "sizeBytes": 14364681,
-    "sha256": "993ca1cb6af40de15d7a7bb4591cafcf9942deffaeabf73086b93f99aaebf85c"
+    "sha256": "eb2a0c205f2119dfd74f2c581e3f73f1036b24e45bbbe0c2bb798aba7483271c"
   },
   "patch": null,
-  "commitSha": "2653caa8b563bba7b0bc5dec0727f22d9e6dcbd1"
+  "commitSha": "8c74ca6e6a5064d99f5e31e039bf02d280863910"
 }
