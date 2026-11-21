@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.8",
-  "versionCode": 31,
-  "tag": "v0.9.8",
-  "publishedAt": "2026-11-21T09:18:22Z",
+  "versionName": "0.9.9",
+  "versionCode": 32,
+  "tag": "v0.9.9",
+  "publishedAt": "2026-11-21T11:55:45Z",
   "channel": "stable",
-  "notes": "refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
+  "notes": "feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.8/abyss-tools-v0.9.8.apk",
-    "sizeBytes": 14364681,
-    "sha256": "eb2a0c205f2119dfd74f2c581e3f73f1036b24e45bbbe0c2bb798aba7483271c"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.9/abyss-tools-v0.9.9.apk",
+    "sizeBytes": 14413833,
+    "sha256": "e2bad79a2f4a347549a7873ba5df5a67535f9c9628ad941238de4f8f748d21f4"
   },
   "patch": null,
-  "commitSha": "8c74ca6e6a5064d99f5e31e039bf02d280863910"
+  "commitSha": "ea04be0e245bd5c88a0f496c87fa8c68f8454282"
 }
