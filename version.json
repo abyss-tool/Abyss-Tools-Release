@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.4",
-  "versionCode": 27,
-  "tag": "v0.9.4",
-  "publishedAt": "2026-11-20T16:08:37Z",
+  "versionName": "0.9.5",
+  "versionCode": 28,
+  "tag": "v0.9.5",
+  "publishedAt": "2026-11-21T07:30:16Z",
   "channel": "stable",
-  "notes": "fix(ui): 区块标题与卡片同框堆叠 —— 全仓「文字重叠」病灶根修",
+  "notes": "Merge PR #4: Fix security and functional bugs",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.4/abyss-tools-v0.9.4.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.5/abyss-tools-v0.9.5.apk",
     "sizeBytes": 14364525,
-    "sha256": "d042b799567efe80cea129f186568354b74e63236cc02f88f5d916463ad6c23f"
+    "sha256": "e3cddcc48516c810654cfb112474a58f5ea0a49117485f904b3ba7313d0d794d"
   },
   "patch": null,
-  "commitSha": "c582fbcbb4a04c1fb76a60bb8ed1b1fa8d7ca800"
+  "commitSha": "967d351878789e040bcd553e4c4e3999f4266144"
 }
