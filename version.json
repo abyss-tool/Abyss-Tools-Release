@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.5",
-  "versionCode": 28,
-  "tag": "v0.9.5",
-  "publishedAt": "2026-11-21T07:30:16Z",
+  "versionName": "0.9.6",
+  "versionCode": 29,
+  "tag": "v0.9.6",
+  "publishedAt": "2026-11-21T08:50:55Z",
   "channel": "stable",
-  "notes": "Merge PR #4: Fix security and functional bugs",
+  "notes": "docs: 规格说明书全集落库(207 份,v0.9.5 基线) (#7)",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.5/abyss-tools-v0.9.5.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.6/abyss-tools-v0.9.6.apk",
     "sizeBytes": 14364525,
-    "sha256": "e3cddcc48516c810654cfb112474a58f5ea0a49117485f904b3ba7313d0d794d"
+    "sha256": "7d90bee61c64080380d4041024832853088728653db3e3f6d7a1ca015ee68eed"
   },
   "patch": null,
-  "commitSha": "967d351878789e040bcd553e4c4e3999f4266144"
+  "commitSha": "2a1dbfe7bd9f5163028f9d30215100d111209b9e"
 }
