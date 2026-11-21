@@ -1,19 +1,31 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-21T09:18:22Z",
+  "generatedAt": "2026-11-21T11:55:45Z",
   "latest": {
-    "versionName": "0.9.8",
-    "versionCode": 31,
-    "tag": "v0.9.8",
+    "versionName": "0.9.9",
+    "versionCode": 32,
+    "tag": "v0.9.9",
     "date": "2026-11-21",
-    "title": "v0.9.8 —— refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
+    "title": "v0.9.9 —— feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
     "notes": [
-      "refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）"
+      "feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)"
     ],
-    "markdown": "- refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.8"
+    "markdown": "- feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.9"
   },
   "history": [
+    {
+      "versionName": "0.9.8",
+      "versionCode": 31,
+      "tag": "v0.9.8",
+      "date": "2026-11-21",
+      "title": "v0.9.8 —— refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
+      "notes": [
+        "refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）"
+      ],
+      "markdown": "- refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.8"
+    },
     {
       "versionName": "0.9.7",
       "versionCode": 30,
@@ -261,20 +273,6 @@
       ],
       "markdown": "- v0.7.4 —— 玻璃采样成环通用断路器（vendored 库补丁 v3，P0）：新增 GlassRecordingGuard —— 在采样咽喉（LayerBackdrop.drawBackdrop）统一判环：帧内「正在录制的采样源栈」+ 每源持久「可传递采样源集合」，把要采样的层画进当前录制会形成\"自己包含自己\"的链（含跨帧）就地拒绝；堵住跨 backdrop 链式成环（玻璃采样导出源 exportedBackdrop、导出源内容又回灌进采样源录制 —— A→B→C→A）这一 v1.1 isRecordingSelf 完全失明的形态；修复 PLE110 2026-11-15 存活 472s 后 RenderThread prepareTree 原生栈溢出（SIGSEGV，512 帧 prepareListAndChildren ↔ prepareTreeImpl 交替，显示列表深度每帧无界增长约 8 分钟耗尽线程栈）\n- v0.7.4 —— 渲染安全模式断路器 v2（P0）：新增「连崩计数」—— 上一会话未干净退出（崩溃 / 被系统杀死，无 markCleanExit 标记）即 +1、与间隔无关，连续 3 次异常终止触发安全模式；修复 v1 对「会话存活数分钟后才崩」的慢性闪退循环永久失明（存活超 45s 即被 markStable 清零，同一崩溃反复发生也永不触发）；用户主动退出（isFinishing 销毁）补写干净退出标记、连崩归零 —— 正常使用一次即自愈；代价（诚实声明）：滑卡清理 / 后台回收同样计入连崩，误触发仅是 Frosted 降级且可自愈可手动重置，保守方向正确\n- v0.7.4 —— 玻璃嵌套深度预算（core:designsystem）：玻璃套玻璃超 2 层的内层自动降级 Frosted（零 RenderEffect / 零采样）—— 渲染树玻璃层深度上限恒为常数，与业务嵌套布局无关，第三道独立防线\n- v0.7.4 —— 实现纪律：RenderSafeMode 保持纯 JVM 可单测（状态文件 3 行 → 5 行，向后兼容 v0.7.3 旧格式 —— 行数不足按 fail-open 中性处理，升级用户不被误惩罚），新增 RenderSafeModeTest 11 个用例覆盖快速循环 / 慢性循环 / 干净退出自愈 / engaged 粘滞 / 旧格式迁移 / 损坏文件；三道防线互相独立 —— 守卫堵根因、深度预算限上界、断路器兜底「永远能打开」",
       "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.7.4"
-    },
-    {
-      "versionName": "0.7.3",
-      "versionCode": 11,
-      "tag": "v0.7.3",
-      "date": "2026-11-08",
-      "title": "v0.7.3 —— v0.7.3 —— 渲染安全模式断路器（P0 加固）：从「进程死亡 → 秒级重启」的外部特征识别闪退循环（Java / 原生崩溃全适用，不依赖崩溃类型），连续 3 次快速冷启动（间隔 <20s）自动进入安全模式 —— 禁用全部液态玻璃采样与 RenderEffect（Frosted 降级档），保证主壳能打开、诊断可读，「App 永远能打开」成为硬保证",
-      "notes": [
-        "v0.7.3 —— 渲染安全模式断路器（P0 加固）：从「进程死亡 → 秒级重启」的外部特征识别闪退循环（Java / 原生崩溃全适用，不依赖崩溃类型），连续 3 次快速冷启动（间隔 <20s）自动进入安全模式 —— 禁用全部液态玻璃采样与 RenderEffect（Frosted 降级档），保证主壳能打开、诊断可读，「App 永远能打开」成为硬保证",
-        "v0.7.3 —— 恢复语义：会话存活 45 秒自动清零（下次冷启动恢复正常渲染档）；设置 → 诊断 新增安全模式状态展示（触发原因 / 快速重启计数）与手动重置；触发时主界面顶部横幅人话告知降级原因与恢复路径",
-        "v0.7.3 —— 实现纪律：core:common 新增 RenderSafeMode（纯 JVM 可单测，三行文本状态文件，一切 IO runCatching 静默兜底 —— 断路器自身绝不成为新崩溃源，fail-open）；MainActivity 进程门闩区分冷启动 / 温重建（旋转不计数）；AbyssRoot 新增 glassEnabled 参数（false → backdrop=null → 全玻璃件 Frosted）"
-      ],
-      "markdown": "- v0.7.3 —— 渲染安全模式断路器（P0 加固）：从「进程死亡 → 秒级重启」的外部特征识别闪退循环（Java / 原生崩溃全适用，不依赖崩溃类型），连续 3 次快速冷启动（间隔 <20s）自动进入安全模式 —— 禁用全部液态玻璃采样与 RenderEffect（Frosted 降级档），保证主壳能打开、诊断可读，「App 永远能打开」成为硬保证\n- v0.7.3 —— 恢复语义：会话存活 45 秒自动清零（下次冷启动恢复正常渲染档）；设置 → 诊断 新增安全模式状态展示（触发原因 / 快速重启计数）与手动重置；触发时主界面顶部横幅人话告知降级原因与恢复路径\n- v0.7.3 —— 实现纪律：core:common 新增 RenderSafeMode（纯 JVM 可单测，三行文本状态文件，一切 IO runCatching 静默兜底 —— 断路器自身绝不成为新崩溃源，fail-open）；MainActivity 进程门闩区分冷启动 / 温重建（旋转不计数）；AbyssRoot 新增 glassEnabled 参数（false → backdrop=null → 全玻璃件 Frosted）",
-      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.7.3"
     }
   ]
 }
