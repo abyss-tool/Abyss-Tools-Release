@@ -1,19 +1,45 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-21T11:55:45Z",
+  "generatedAt": "2026-11-21T14:58:29Z",
   "latest": {
-    "versionName": "0.9.9",
-    "versionCode": 32,
-    "tag": "v0.9.9",
+    "versionName": "0.9.10",
+    "versionCode": 33,
+    "tag": "v0.9.10",
     "date": "2026-11-21",
-    "title": "v0.9.9 —— feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
+    "title": "v0.9.10 —— # v0.9.10 — 插件权限透明化面板（N-EXP-006）",
     "notes": [
-      "feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)"
+      "# v0.9.10 — 插件权限透明化面板（N-EXP-006）",
+      "> M1 里程碑 · 规格落地 ｜ 2026-11-21",
+      "## ✨ 新增",
+      "- **插件权限透明化面板**（N-EXP-006，P1 / M1）：插件详情页「权限需求」卡重构",
+      "  - **FR-001 人话映射**：`permissions: List<String>` 旧字段的常见 Android 权限 ID（INTERNET / SYSTEM_ALERT_WINDOW / WRITE_EXTERNAL_STORAGE 等）与插件域权限 ID（shizuku_shell / root / overlay / cloud_hash_lookup 等）统一映射为人话标签 + 风险等级 + 详细说明，不再直接展示原始权限字符串。",
+      "  - **FR-002 Shizuku 双态标注**：独立 APK 插件的 per-app Shizuku 授权声明（`shizuku.ownAuth=true`）与宿主进程内授权分别标注，`reason` 字段全文展示；审阅对话框内单独着色区块突出说明。",
+      "  - **FR-003 外传分组置顶**：涉及第三方数据外传的权限（如 VirusTotal 云查毒）按 `PermissionGroup.NETWORK_EXTERNAL` 分组置顶展示，以 error 色容器高亮，并单独标注「⚠ 会上传数据」、数据类别、接收方；本组织通道网络访问（`NETWORK_INTERNAL`）与第三方外传明确区分。",
+      "  - **FR-004 安装前显式审阅**：「安装插件（数据框架）」与「安装插件（APK）」按钮点击后不再直接启动安装管线，而是弹出权限审阅对话框；用户必须勾选「我已逐条阅读并接受上述权限与风险」复选框，「确认安装」按钮才会启用，杜绝一键静默同意。失败后的「重试」按钮直接走安装管线不重复审阅。",
+      "- 新增 `PermissionAuditCard` / `PermissionReviewDialog` / `PermissionGroupBlock` / `PermissionItemRow` 组件；新增 `legacyPermissionFromId` / `resolvePermissionsForDisplay` 工具函数；`DataInstallUi` / `InstallFlowUi` 增加 `onRetry` 参数分离首次安装与重试回调。",
+      "## 🔧 变更",
+      "- 升版 v0.9.10 / versionCode 33。",
+      "- 更新 N-EXP-006 规格文档与 SPEC-INDEX 状态为「已实现（v0.9.10）」。",
+      "## ✅ 验收",
+      "- AC-001：病毒拦截插件安装页可见「云查询默认关闭」与 reason 全文 —— 由 `legacyPermissionFromId(\"cloud_hash_lookup\")` 映射与人话说明覆盖；结构化 `declaredPermissions` 优先、旧字段兜底。",
+      "- 无新增外部依赖；纯 UI 层改动，行为变更回归既有单测。"
     ],
-    "markdown": "- feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.9"
+    "markdown": "- # v0.9.10 — 插件权限透明化面板（N-EXP-006）\n- > M1 里程碑 · 规格落地 ｜ 2026-11-21\n- ## ✨ 新增\n- - **插件权限透明化面板**（N-EXP-006，P1 / M1）：插件详情页「权限需求」卡重构\n-   - **FR-001 人话映射**：`permissions: List<String>` 旧字段的常见 Android 权限 ID（INTERNET / SYSTEM_ALERT_WINDOW / WRITE_EXTERNAL_STORAGE 等）与插件域权限 ID（shizuku_shell / root / overlay / cloud_hash_lookup 等）统一映射为人话标签 + 风险等级 + 详细说明，不再直接展示原始权限字符串。\n-   - **FR-002 Shizuku 双态标注**：独立 APK 插件的 per-app Shizuku 授权声明（`shizuku.ownAuth=true`）与宿主进程内授权分别标注，`reason` 字段全文展示；审阅对话框内单独着色区块突出说明。\n-   - **FR-003 外传分组置顶**：涉及第三方数据外传的权限（如 VirusTotal 云查毒）按 `PermissionGroup.NETWORK_EXTERNAL` 分组置顶展示，以 error 色容器高亮，并单独标注「⚠ 会上传数据」、数据类别、接收方；本组织通道网络访问（`NETWORK_INTERNAL`）与第三方外传明确区分。\n-   - **FR-004 安装前显式审阅**：「安装插件（数据框架）」与「安装插件（APK）」按钮点击后不再直接启动安装管线，而是弹出权限审阅对话框；用户必须勾选「我已逐条阅读并接受上述权限与风险」复选框，「确认安装」按钮才会启用，杜绝一键静默同意。失败后的「重试」按钮直接走安装管线不重复审阅。\n- - 新增 `PermissionAuditCard` / `PermissionReviewDialog` / `PermissionGroupBlock` / `PermissionItemRow` 组件；新增 `legacyPermissionFromId` / `resolvePermissionsForDisplay` 工具函数；`DataInstallUi` / `InstallFlowUi` 增加 `onRetry` 参数分离首次安装与重试回调。\n- ## 🔧 变更\n- - 升版 v0.9.10 / versionCode 33。\n- - 更新 N-EXP-006 规格文档与 SPEC-INDEX 状态为「已实现（v0.9.10）」。\n- ## ✅ 验收\n- - AC-001：病毒拦截插件安装页可见「云查询默认关闭」与 reason 全文 —— 由 `legacyPermissionFromId(\"cloud_hash_lookup\")` 映射与人话说明覆盖；结构化 `declaredPermissions` 优先、旧字段兜底。\n- - 无新增外部依赖；纯 UI 层改动，行为变更回归既有单测。",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.10"
   },
   "history": [
+    {
+      "versionName": "0.9.9",
+      "versionCode": 32,
+      "tag": "v0.9.9",
+      "date": "2026-11-21",
+      "title": "v0.9.9 —— feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
+      "notes": [
+        "feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)"
+      ],
+      "markdown": "- feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.9"
+    },
     {
       "versionName": "0.9.8",
       "versionCode": 31,
@@ -258,21 +284,6 @@
       ],
       "markdown": "- fix(core:common): 测试名去点号 —— 反引号方法名不允许 '.' 字符",
       "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.7.5"
-    },
-    {
-      "versionName": "0.7.4",
-      "versionCode": 12,
-      "tag": "v0.7.4",
-      "date": "2026-11-15",
-      "title": "v0.7.4 —— v0.7.4 —— 玻璃采样成环通用断路器（vendored 库补丁 v3，P0）：新增 GlassRecordingGuard —— 在采样咽喉（LayerBackdrop.drawBackdrop）统一判环：帧内「正在录制的采样源栈」+ 每源持久「可传递采样源集合」，把要采样的层画进当前录制会形成\"自己包含自己\"的链（含跨帧）就地拒绝；堵住跨 backdrop 链式成环（玻璃采样导出源 exportedBackdrop、导出源内容又回灌进采样源录制 —— A→B→C→A）这一 v1.1 isRecordingSelf 完全失明的形态；修复 PLE110 2026-11-15 存活 472s 后 RenderThread prepareTree 原生栈溢出（SIGSEGV，512 帧 prepareListAndChildren ↔ prepareTreeImpl 交替，显示列表深度每帧无界增长约 8 分钟耗尽线程栈）",
-      "notes": [
-        "v0.7.4 —— 玻璃采样成环通用断路器（vendored 库补丁 v3，P0）：新增 GlassRecordingGuard —— 在采样咽喉（LayerBackdrop.drawBackdrop）统一判环：帧内「正在录制的采样源栈」+ 每源持久「可传递采样源集合」，把要采样的层画进当前录制会形成\"自己包含自己\"的链（含跨帧）就地拒绝；堵住跨 backdrop 链式成环（玻璃采样导出源 exportedBackdrop、导出源内容又回灌进采样源录制 —— A→B→C→A）这一 v1.1 isRecordingSelf 完全失明的形态；修复 PLE110 2026-11-15 存活 472s 后 RenderThread prepareTree 原生栈溢出（SIGSEGV，512 帧 prepareListAndChildren ↔ prepareTreeImpl 交替，显示列表深度每帧无界增长约 8 分钟耗尽线程栈）",
-        "v0.7.4 —— 渲染安全模式断路器 v2（P0）：新增「连崩计数」—— 上一会话未干净退出（崩溃 / 被系统杀死，无 markCleanExit 标记）即 +1、与间隔无关，连续 3 次异常终止触发安全模式；修复 v1 对「会话存活数分钟后才崩」的慢性闪退循环永久失明（存活超 45s 即被 markStable 清零，同一崩溃反复发生也永不触发）；用户主动退出（isFinishing 销毁）补写干净退出标记、连崩归零 —— 正常使用一次即自愈；代价（诚实声明）：滑卡清理 / 后台回收同样计入连崩，误触发仅是 Frosted 降级且可自愈可手动重置，保守方向正确",
-        "v0.7.4 —— 玻璃嵌套深度预算（core:designsystem）：玻璃套玻璃超 2 层的内层自动降级 Frosted（零 RenderEffect / 零采样）—— 渲染树玻璃层深度上限恒为常数，与业务嵌套布局无关，第三道独立防线",
-        "v0.7.4 —— 实现纪律：RenderSafeMode 保持纯 JVM 可单测（状态文件 3 行 → 5 行，向后兼容 v0.7.3 旧格式 —— 行数不足按 fail-open 中性处理，升级用户不被误惩罚），新增 RenderSafeModeTest 11 个用例覆盖快速循环 / 慢性循环 / 干净退出自愈 / engaged 粘滞 / 旧格式迁移 / 损坏文件；三道防线互相独立 —— 守卫堵根因、深度预算限上界、断路器兜底「永远能打开」"
-      ],
-      "markdown": "- v0.7.4 —— 玻璃采样成环通用断路器（vendored 库补丁 v3，P0）：新增 GlassRecordingGuard —— 在采样咽喉（LayerBackdrop.drawBackdrop）统一判环：帧内「正在录制的采样源栈」+ 每源持久「可传递采样源集合」，把要采样的层画进当前录制会形成\"自己包含自己\"的链（含跨帧）就地拒绝；堵住跨 backdrop 链式成环（玻璃采样导出源 exportedBackdrop、导出源内容又回灌进采样源录制 —— A→B→C→A）这一 v1.1 isRecordingSelf 完全失明的形态；修复 PLE110 2026-11-15 存活 472s 后 RenderThread prepareTree 原生栈溢出（SIGSEGV，512 帧 prepareListAndChildren ↔ prepareTreeImpl 交替，显示列表深度每帧无界增长约 8 分钟耗尽线程栈）\n- v0.7.4 —— 渲染安全模式断路器 v2（P0）：新增「连崩计数」—— 上一会话未干净退出（崩溃 / 被系统杀死，无 markCleanExit 标记）即 +1、与间隔无关，连续 3 次异常终止触发安全模式；修复 v1 对「会话存活数分钟后才崩」的慢性闪退循环永久失明（存活超 45s 即被 markStable 清零，同一崩溃反复发生也永不触发）；用户主动退出（isFinishing 销毁）补写干净退出标记、连崩归零 —— 正常使用一次即自愈；代价（诚实声明）：滑卡清理 / 后台回收同样计入连崩，误触发仅是 Frosted 降级且可自愈可手动重置，保守方向正确\n- v0.7.4 —— 玻璃嵌套深度预算（core:designsystem）：玻璃套玻璃超 2 层的内层自动降级 Frosted（零 RenderEffect / 零采样）—— 渲染树玻璃层深度上限恒为常数，与业务嵌套布局无关，第三道独立防线\n- v0.7.4 —— 实现纪律：RenderSafeMode 保持纯 JVM 可单测（状态文件 3 行 → 5 行，向后兼容 v0.7.3 旧格式 —— 行数不足按 fail-open 中性处理，升级用户不被误惩罚），新增 RenderSafeModeTest 11 个用例覆盖快速循环 / 慢性循环 / 干净退出自愈 / engaged 粘滞 / 旧格式迁移 / 损坏文件；三道防线互相独立 —— 守卫堵根因、深度预算限上界、断路器兜底「永远能打开」",
-      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.7.4"
     }
   ]
 }
