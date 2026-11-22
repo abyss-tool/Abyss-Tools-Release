@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.13",
-  "versionCode": 36,
-  "tag": "v0.9.13",
-  "publishedAt": "2026-11-22T07:15:15Z",
+  "versionName": "0.9.14",
+  "versionCode": 37,
+  "tag": "v0.9.14",
+  "publishedAt": "2026-11-22T07:51:13Z",
   "channel": "stable",
-  "notes": "# v0.9.13 发布要点；## ✨ 新功能；- **FEAT-034 底栏四 tab · 插件独立入口**：底部玻璃导航栏 3→4 tab（仪表盘 / 功能 / 插件 / 设置）——插件中心升为顶层 tab（无返回箭头、标题与 tab 文案一致、底栏第 3 格高亮），旋转 / 进程重建后 tab 恢复；功能页插件分类 / 门面卡 / 插件中心工具行整体移除，分类统计 11→10 数据驱动；仪表盘插件入口统一切到「插件」tab，全 app 单一插件中心深度；`selectTab` 非法索引 fail-closed 直接 return（替代旧 `else -> Settings` 猜测）；新手引导文案同步「四个 tab / 插件（独立 tab）」。；- **FEAT-033 滑动指示器双样式切换**：设置 → 外观新增「滑动指示器样式」二选一 —— **霜面液滴**（默认，v0.9.10 现状参数逐字冻结零回归）与**清透玻璃**（零模糊：`blurEnabled = false` 整段跳过 vibrancy + blur，背景 100% 清晰透出；静态玻璃高光：光带冻结中心 + rim 增益 1.45 + 四角镜面点光 + 相对侧轻暗边；边缘带保留 AGSL lens 折射与色散）。当前帧即时生效、无需重启；切换不重建 `AbyssLiquidMotion`，拖拽 / 弹簧 / 动量外推完全一致；偏好持久化 `abyss_settings`，未知值 fail-closed 回退；API 31–32 渐变降级档改静态三段式（上缘亮线 + 下缘暗边 + 左右渐隐），静止零常驻 invalidate。；## 🔧 变更；- 升版 v0.9.13 / versionCode 36。；- 修订规格：`ARC-004`（四 tab 索引映射）、`ARC-005`（Clear 档渲染契约）、`ARC-010`（11 分类）、`FEAT-001/002/003/005`、`SRS-004`、`SPEC-INDEX` 新增 FEAT-033/034 行（状态「已实现（v0.9.13）」）、`README` / `docs/ARCHITECTURE.md` / `深渊工具_整体增强方案.md` 同步。；## ✅ 验收；- 纯 JVM 单测：`AbyssIndicatorStyle.from` 六例（null / 空串 / 大写 / 未知 / frosted / clear）+ `ToolCatalogTest`（11 分类、`byId(\"plugin-hub\") == null`、id 唯一、PLUGIN.pluginId 非空）。；- 无新增外部依赖；不新增 `Color(0x…)` 业务侧硬编码（Clear 档色值全部进 `AbyssGlassPalette`）。",
+  "notes": "# v0.9.14 发布要点；## ✨ 新功能；- **FEAT-035 设置页分区重构**：设置从单页六区平铺改为分区导航 —— 主页四张入口卡（**权限 / 界面 / 更新 / 关于**），点击进入对应子页（栈深 2、底栏隐藏、旋转/进程重建原位恢复）；全部既有设置项能力零删减重组（偏好键/开关/滑杆/对话框语义逐字不变）。设计语言参考 Ultra-Guru/Android-Guru-Agent 设置中心（姊妹项目）。；- **FEAT-036 应用图标三选一**：设置 → 界面 → 应用图标 —— 三款像素风「深渊之眼」随选随换：**碧眼**（默认）/ **绯眼** / **隐眼**。activity-alias 互斥启停（PackageManager，桌面即时生效）、昼夜双背景三款共用、重启保持；偏好 fail-closed 回退碧眼；切换前 Snackbar 预期管理（图标刷新可能延迟数秒，部分设备会重启应用）。；- **FEAT-037 深渊agent置顶直达**：插件页顶部新增「深渊agent」卡（姊妹项目 Ultra-Guru/Android-Guru-Agent 独立 APK）—— 发布仓 version.json 固定通道拉取版本清单（fail-closed：缺 download/sha256 拒绝）→ **多镜像下载**（ghfast / ghproxy.net / gh-proxy 前缀 + 直连兜底自动择优回退）→ SHA-256 强校验（不符删缓存拒装）→ 确认对话框（版本/大小/摘要）→ 系统安装器；ABI 变体自动选择（arm64 优先，可手动切 universal）。；## 🔧 变更；- 升版 v0.9.14 / versionCode 37。；- 修订规格：`FEAT-005`（分区重构增注）、`ARC-004`（settings: token 登记）、`SPEC-INDEX` 新增 FEAT-035/036/037 行（状态「已实现（v0.9.14）」）、`README` 设置区描述同步。；- 图标前景资源迁 `core:designsystem`（设置页预览与 app 图标共用单一事实源）。；## ✅ 验收；- 纯 JVM 单测：`LauncherIcon.from` 四例（null/空串/未知/三值命中）+ `AgentRelease` 五例（正常双变体/仅 universal/缺 download/缺 sha256/坏 JSON 全 fail-closed）。；- 无新增外部依赖、无新增权限；`Activity` 本体永不禁用（别名接管 LAUNCHER）。",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.13/abyss-tools-v0.9.13.apk",
-    "sizeBytes": 14546005,
-    "sha256": "1675ac9b1807afd161a7771f0c049243ff34a1b8acfbedc23fa66f073a802305"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.14/abyss-tools-v0.9.14.apk",
+    "sizeBytes": 14780565,
+    "sha256": "23d16bd41d8ce048b8134e77576c386ce13e0577f1683e4a296b543eeffae874"
   },
   "patch": null,
-  "commitSha": "dcf4e2f07c94f90cf192c0f259b8dfb9418a8293"
+  "commitSha": "84a3f94437a65258d55a177b3b6ca1c6669c02d0"
 }
