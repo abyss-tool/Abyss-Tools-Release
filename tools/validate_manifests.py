@@ -107,8 +107,8 @@ if errors:
 # 轮换期多把公钥以列表共存，任一验过即合法）。
 TRUSTED_PUBKEYS = [
     """
-    untrusted comment: Abyss-Tools dev signing public key (M1, v0.10)
-    RWSWn6+V/umBvAHNeSekC6UjX5Tg0me06vgXgEPeJ88ulrP82fR94AYZ
+    untrusted comment: Abyss-Tools manifest signing public key (meng4117222)
+    RWRx16ORC4gsdxs6DsnctDYagiRptPX1NgFcVpQNYqh/BXGhPAHebh3B
     """,
 ]
 SIGNED_MANIFESTS = ("version.json", "patches.json", "changelog.json")
