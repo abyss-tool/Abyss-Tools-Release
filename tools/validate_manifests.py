@@ -93,8 +93,8 @@ if latest.get("tag") != f"v{vn}":
 if not latest.get("title") or not latest.get("notes"):
     fail("changelog.json.latest 缺 title / notes")
 history = changelog.get("history", [])
-if history and history[0].get("versionName") != vn:
-    fail("changelog.json.history[0] 应为本版（发布后归档）")
+if history and history[0].get("versionName") == vn:
+    fail(f"changelog.json.history[0] 不应为本版 —— 旧 latest 下沉 history[0],本版在 latest(当前 history[0]={history[0].get('versionName')})")
 
 if errors:
     print(f"[manifests] ✗ {len(errors)} 处校验失败：", file=sys.stderr)
