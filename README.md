@@ -1,8 +1,8 @@
 # Abyss-Tools-Release —— 深渊工具发布仓库
 
-[![Manifests](https://github.com/Ultra-Guru/Abyss-Tools-Release/actions/workflows/validate-manifests.yml/badge.svg?branch=main)](https://github.com/Ultra-Guru/Abyss-Tools-Release/actions/workflows/validate-manifests.yml)
+[![Manifests](https://github.com/abyss-tool/Abyss-Tools-Release/actions/workflows/validate-manifests.yml/badge.svg?branch=main)](https://github.com/abyss-tool/Abyss-Tools-Release/actions/workflows/validate-manifests.yml)
 
-双仓库模式的**发布侧**：开发仓库 [Ultra-Guru/Abyss-Tools](https://github.com/Ultra-Guru/Abyss-Tools) 的 CI 在此发布版本资产；App 客户端把本仓库 main 分支根作为**检查更新的固定读取点**。
+双仓库模式的**发布侧**：开发仓库 [abyss-tool/Abyss-Tools](https://github.com/abyss-tool/Abyss-Tools) 的 CI 在此发布版本资产；App 客户端把本仓库 main 分支根作为**检查更新的固定读取点**。
 
 ## 通道资产
 
