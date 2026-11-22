@@ -1,19 +1,58 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-22T08:01:51Z",
+  "generatedAt": "2026-11-22T08:10:40Z",
   "latest": {
-    "versionName": "0.9.15",
-    "versionCode": 38,
-    "tag": "v0.9.15",
+    "versionName": "0.9.16",
+    "versionCode": 39,
+    "tag": "v0.9.16",
     "date": "2026-11-22",
-    "title": "v0.9.15 —— Merge pull request #18 from abyss-tool/feat/feat035-037-settings-icons-agent",
+    "title": "v0.9.16 —— # Abyss v0.9.16 更新说明",
     "notes": [
-      "Merge pull request #18 from abyss-tool/feat/feat035-037-settings-icons-agent"
+      "# Abyss v0.9.16 更新说明",
+      "**发布日期**：2026-11-22  ",
+      "**版本代号**：observable-update  ",
+      "**里程碑**：M1 信任与透明（收尾批次）",
+      "## 新增",
+      "- **N-UPD-003 · 更新链可观测性**",
+      "  - 新增 `UpdateEvent` / `UpdateTracer`：覆盖从「检查更新」到「安装完成/失败」全链路 15 个结构化事件点，记录镜像源、阶段耗时、下载字节、重试次数、HTTP 状态码、Range 支持与失败详情",
+      "  - 新增 `UpdateSessionSummary` 会话汇总，失败时自动聚合：是否成功、命中镜像、总耗时、总字节、重试次数、失败原因",
+      "  - 重构 `UpdateFailureClassifier`：统一枚举 **25+ 失败原因**，每个原因自带人话文案、是否可自行恢复标志与分类标签（网络 / 安全 / 存储 / 安装 / 解析 / 补丁 / 未知）；支持从 Throwable 与 HTTP status 双通道分类",
+      "  - 新增设置页 `UpdateFailureSheet` 底部抽屉：更新失败时展示分类图标、人话原因、可恢复性建议、本次会话统计（镜像/重试/耗时/大小/事件数）和诊断ID，附「复制诊断ID」按钮",
+      "  - 失败事件通过 `DiagnosticsLog`（UPDATE_CHECK kind）以 WARN 级别落盘",
+      "- **N-ENG-009 · 归档仓历史清单漂移治理**",
+      "  - 新增 `ArchiveDriftGuard`：在解析 version.json 前强制校验 `schema ∈ {abyss-version-v1, abyss-version-v2}`，越界 fail-closed",
+      "  - 必填字段（`versionName` / `versionCode` / `download.url`）缺失即拒绝",
+      "  - `download.sha256` 若存在必须为 64 字符十六进制",
+      "  - v2 清单 `patch` 必须为 object",
+      "  - 漂移时抛 `ManifestDriftException` 并记录诊断日志，防止老版本客户端在归档仓被覆写后静默拉到不兼容清单",
+      "## 工程",
+      "- 版本号：`0.9.15` → **`0.9.16`** (code 38 → 39)",
+      "- 所有新增类使用 kotlinx.serialization，无新增依赖；不改变现有更新流程行为",
+      "- CI 门禁：assembleDebug / assembleRelease / unit tests / spec-lint / validate_manifests / release_notes 全绿",
+      "## 已知限制",
+      "- `UpdateTracer` 已实现但 `UpdateManager` 主链路埋点接入将在 v0.9.17 完成",
+      "- `ArchiveDriftGuard.validateVersionJson()` 需在 `UpdateChecker`/`PluginRepository` 调用后生效，接入将在下批次完成",
+      "- `UpdateFailureSheet` 已可被设置页调用，「关于」Tab的更新失败入口将在主链路接入后绑定",
+      "## 校验",
+      "- Spec 登记：`N-UPD-003` / `N-ENG-009` 状态已标记为「已实现（v0.9.16）」",
+      "- 发布说明格式通过 `tools/validate_release_notes.py` 校验"
     ],
-    "markdown": "- Merge pull request #18 from abyss-tool/feat/feat035-037-settings-icons-agent",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.15"
+    "markdown": "- # Abyss v0.9.16 更新说明\n- **发布日期**：2026-11-22  \n- **版本代号**：observable-update  \n- **里程碑**：M1 信任与透明（收尾批次）\n- ## 新增\n- - **N-UPD-003 · 更新链可观测性**\n-   - 新增 `UpdateEvent` / `UpdateTracer`：覆盖从「检查更新」到「安装完成/失败」全链路 15 个结构化事件点，记录镜像源、阶段耗时、下载字节、重试次数、HTTP 状态码、Range 支持与失败详情\n-   - 新增 `UpdateSessionSummary` 会话汇总，失败时自动聚合：是否成功、命中镜像、总耗时、总字节、重试次数、失败原因\n-   - 重构 `UpdateFailureClassifier`：统一枚举 **25+ 失败原因**，每个原因自带人话文案、是否可自行恢复标志与分类标签（网络 / 安全 / 存储 / 安装 / 解析 / 补丁 / 未知）；支持从 Throwable 与 HTTP status 双通道分类\n-   - 新增设置页 `UpdateFailureSheet` 底部抽屉：更新失败时展示分类图标、人话原因、可恢复性建议、本次会话统计（镜像/重试/耗时/大小/事件数）和诊断ID，附「复制诊断ID」按钮\n-   - 失败事件通过 `DiagnosticsLog`（UPDATE_CHECK kind）以 WARN 级别落盘\n- - **N-ENG-009 · 归档仓历史清单漂移治理**\n-   - 新增 `ArchiveDriftGuard`：在解析 version.json 前强制校验 `schema ∈ {abyss-version-v1, abyss-version-v2}`，越界 fail-closed\n-   - 必填字段（`versionName` / `versionCode` / `download.url`）缺失即拒绝\n-   - `download.sha256` 若存在必须为 64 字符十六进制\n-   - v2 清单 `patch` 必须为 object\n-   - 漂移时抛 `ManifestDriftException` 并记录诊断日志，防止老版本客户端在归档仓被覆写后静默拉到不兼容清单\n- ## 工程\n- - 版本号：`0.9.15` → **`0.9.16`** (code 38 → 39)\n- - 所有新增类使用 kotlinx.serialization，无新增依赖；不改变现有更新流程行为\n- - CI 门禁：assembleDebug / assembleRelease / unit tests / spec-lint / validate_manifests / release_notes 全绿\n- ## 已知限制\n- - `UpdateTracer` 已实现但 `UpdateManager` 主链路埋点接入将在 v0.9.17 完成\n- - `ArchiveDriftGuard.validateVersionJson()` 需在 `UpdateChecker`/`PluginRepository` 调用后生效，接入将在下批次完成\n- - `UpdateFailureSheet` 已可被设置页调用，「关于」Tab的更新失败入口将在主链路接入后绑定\n- ## 校验\n- - Spec 登记：`N-UPD-003` / `N-ENG-009` 状态已标记为「已实现（v0.9.16）」\n- - 发布说明格式通过 `tools/validate_release_notes.py` 校验",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.16"
   },
   "history": [
+    {
+      "versionName": "0.9.15",
+      "versionCode": 38,
+      "tag": "v0.9.15",
+      "date": "2026-11-22",
+      "title": "v0.9.15 —— Merge pull request #18 from abyss-tool/feat/feat035-037-settings-icons-agent",
+      "notes": [
+        "Merge pull request #18 from abyss-tool/feat/feat035-037-settings-icons-agent"
+      ],
+      "markdown": "- Merge pull request #18 from abyss-tool/feat/feat035-037-settings-icons-agent",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.15"
+    },
     {
       "versionName": "0.9.13",
       "versionCode": 36,
@@ -271,22 +310,6 @@
       ],
       "markdown": "- feat(app): 玻璃采样收敛 —— 真实液态玻璃仅底栏,页内玻璃卡全 Frosted",
       "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.0"
-    },
-    {
-      "versionName": "0.7.8",
-      "versionCode": 16,
-      "tag": "v0.7.8",
-      "date": "2026-11-15",
-      "title": "v0.7.8 —— v0.7.8 —— 覆盖更新下载健壮性（P0）：整包下载改走 .part 暂存 + HTTP Range 断点续传 + 成功后原子改名 —— 国内镜像链 30 MB 整包半途而废不再从零重下，重试自动从断点续传；只认 206 命中才续传（歧义一律重下，绝不把错位字节拼进 APK），决策逻辑纯函数化 + 单测",
-      "notes": [
-        "v0.7.8 —— 覆盖更新下载健壮性（P0）：整包下载改走 .part 暂存 + HTTP Range 断点续传 + 成功后原子改名 —— 国内镜像链 30 MB 整包半途而废不再从零重下，重试自动从断点续传；只认 206 命中才续传（歧义一律重下，绝不把错位字节拼进 APK），决策逻辑纯函数化 + 单测",
-        "v0.7.8 —— 覆盖安装期望门禁（P0）：新增 InstallExpectation —— APK versionCode 必须与通道清单严格一致（镜像资产错位 / 通道未滚动 / 指错版本，在进入系统安装器之前就地拦截，不再依赖难懂的 INSTALL_FAILED_VERSION_DOWNGRADE 错误码）；再核对不降级（待装版本低于在装版本直接拒绝）",
-        "v0.7.8 —— 更新缓存纪律：downloadVerifiedApk 统一「下载 → SHA-256 内聚校验 → 失败即弃缓存」—— 坏文件与 .part 残留不再占坑；缓存命中（同资产已校验通过）秒回，安装失败重试不重付 30 MB 流量；安装成功即释放缓存",
-        "v0.7.8 —— 更新 UI 诚实化：整包按钮显示体积（下载并安装整包 · 24.6 MB）；「支持增量补丁升级」改为诚实表述（客户端 vcdiff 合成引擎接入前，通道增量资产本次仍走整包安装）；下载中提示「中断自动续传」",
-        "v0.7.8 —— 渲染探针收尾（另一工作流交付）：GlassProbe 挂载早于 setContent，玻璃档位 glassEnabled / lensEnabled 双参数接线，NO_LENS 档轻量横幅（与全 Frosted 横幅互斥），设置 → 诊断 新增玻璃管线探针卡片（里程碑摘要 + 现场全文 + 清除）"
-      ],
-      "markdown": "- v0.7.8 —— 覆盖更新下载健壮性（P0）：整包下载改走 .part 暂存 + HTTP Range 断点续传 + 成功后原子改名 —— 国内镜像链 30 MB 整包半途而废不再从零重下，重试自动从断点续传；只认 206 命中才续传（歧义一律重下，绝不把错位字节拼进 APK），决策逻辑纯函数化 + 单测\n- v0.7.8 —— 覆盖安装期望门禁（P0）：新增 InstallExpectation —— APK versionCode 必须与通道清单严格一致（镜像资产错位 / 通道未滚动 / 指错版本，在进入系统安装器之前就地拦截，不再依赖难懂的 INSTALL_FAILED_VERSION_DOWNGRADE 错误码）；再核对不降级（待装版本低于在装版本直接拒绝）\n- v0.7.8 —— 更新缓存纪律：downloadVerifiedApk 统一「下载 → SHA-256 内聚校验 → 失败即弃缓存」—— 坏文件与 .part 残留不再占坑；缓存命中（同资产已校验通过）秒回，安装失败重试不重付 30 MB 流量；安装成功即释放缓存\n- v0.7.8 —— 更新 UI 诚实化：整包按钮显示体积（下载并安装整包 · 24.6 MB）；「支持增量补丁升级」改为诚实表述（客户端 vcdiff 合成引擎接入前，通道增量资产本次仍走整包安装）；下载中提示「中断自动续传」\n- v0.7.8 —— 渲染探针收尾（另一工作流交付）：GlassProbe 挂载早于 setContent，玻璃档位 glassEnabled / lensEnabled 双参数接线，NO_LENS 档轻量横幅（与全 Frosted 横幅互斥），设置 → 诊断 新增玻璃管线探针卡片（里程碑摘要 + 现场全文 + 清除）",
-      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.7.8"
     }
   ]
 }
