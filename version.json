@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.22",
-  "versionCode": 45,
-  "tag": "v0.9.22",
-  "publishedAt": "2026-11-27T13:27:34Z",
+  "versionName": "0.10.0",
+  "versionCode": 46,
+  "tag": "v0.10.0",
+  "publishedAt": "2026-11-27T15:12:01Z",
   "channel": "stable",
-  "notes": "# v0.9.22 · UI-001 文案精简 + 深挖缺陷修复批\n> 发布日期：2026-11-27 · 里程碑：**M1** · versionCode 45\n## UI-001 · 功能文案精简（零说明视觉）\n- `ToolCatalog` 数据模型瘦身：`ToolCategory.description`（10 条）与 `ToolDef.summary`（27 条）字段与字面量全删，功能卡 = 图标 + 单行标题 + 状态色点\n- `ListRowCard` / `SectionHeader` 组件去 summary/subtitle 渲染；`StatusChip` 文字徽章 → 8dp 状态色点（contentDescription 朗读保留语义，TalkBack 无未加标签节点）\n- NavHub 占位页五类长说明、各功能页说明卡 / 教程段 / helper 约 150 段清零；「框架预览 / 首个 APK 发布前」过期话术清零（B-19）\n- 新增 `tools/ui_text_budget.py` CI 门禁（装饰性长文案 ≥18 字且含句号/分号/破折号 → 0 容忍），白名单 135 条错误/授权/高危确认/免责文案 + 行内 keep-text 豁免\n- 业务键零变化：路由 token / 偏好键 / 补丁通道 URL / `ToolCatalog.byId` 全量保留\n## 深挖缺陷修复（「更艰难的找 bug」第一轮）\n- NB-1：`MirrorRouter` 镜像探测线程 NPE（ConcurrentHashMap 不容 null 值，「不可达记录」契约从未成立）→ 哨兵收集归一化\n- NB-2：`InstallEventBus` 幂等语义文档/测试/实现三方矛盾澄清（mode 每次如实更新是降级可见特性）\n- NB-3：病毒审计日志三缺陷 —— 并发水位漂移 / 导出静默丢弃轮转历史（审计链断档）/ 死常量\n- B-25：签名公钥常量「正式钥 vs 开发测试钥」矛盾注释清除\n- B-27：补丁备份区 GC（保留最近 3 份，`clearCache` 级联）\n- B-29：`SignalOverlayService` / `FloatingBallService` 广播注册补 `RECEIVER_NOT_EXPORTED`（Android 13+）\n## 前序批次（v0.9.20/21 已随通道发布）\n- B-04 验签字节保真 / B-05 发布说明门禁闭合 / B-06+B-18 agent 信任链 / B-08+B-17 Shell 超时语义 / B-12 原子落盘 / B-13 PendingIntent 隔离 / B-14 令牌白名单统一",
+  "notes": "# v0.10.0 · M1 里程碑收官：本地可复现门禁 + 归档仓漂移治理\n> 发布日期：2026-11-27 · 里程碑：**M1（收官）** · versionCode 46\n## 概述\n本版本是 M1（信任链 + 脚手架 + 诊断）的**收官版**：M1 全部交付判据（清单验签生效 / PAT 收敛 / 三插件首个可用切片 / 诊断中心可用 / 发布说明门禁生效）此前已达成，本版补齐最后两项工程化缺口并同步规格状态，M1 正式闭版。\n## N-ENG-001 · 本地可复现门禁（零「CI 绿本地红」）\n- 新增 `tools/local_gate.sh`：一条命令复现与 GitHub Actions CI 完全相同的门禁（assembleDebug + assembleRelease + test + validate_manifests + spec_lint + ui_text_budget + 发布说明逐文件门禁）\n- 三模式：`full`（全量）/ `--jvm`（仅 Python 门禁，无需 JDK / Android SDK）/ `--gradle`（仅构建与单测）；工具链版本钉死于脚本头（JDK 17 / Gradle 8.14 wrapper / compileSdk 36）\n- CI `manifests` 任务收敛为调用同一脚本 `--jvm` 模式 —— 两侧共用单一入口，永不漂移（FR-003）\n- 签名材料缺失时 release 降级未签名产物并显著提示（FR-004，与 CI fork PR 同语义）；README 构建章节重写，AGENTS.md 纪律同步（合并判决仍以 Actions 为准）\n## N-ENG-009 · 归档仓历史清单漂移治理\n- 实测 13 个归档插件仓：6 仓（v0.2.0 波次）plugin.json 的 `repo` / `patchChannel` 仍为旧组织 `Ultra-Guru/...` 前缀 —— 归档仓只读不可改，治理取「历史只读快照 + 台账留痕」路径\n- HUB-014 新增 §8 漂移台账：13 仓逐仓登记 repo 实测原值、归档波次与治理结论（FR-004 原值留痕，供审计追溯）\n- 新增 `tools/audit_archived_repos.py` 并入 CI `manifests` 任务：台账 ↔ HUB-014 规格 ↔ 插件索引夹具 ↔ retired 集合四方一致性 + 13 仓 GitHub `archived=true` 实测（fail-closed：归档仓 manifest 再变动即红灯）\n## 规格状态同步（文档与实现的对账收口）\n- `N-EXP-003` 诊断中心 / `N-ENG-008` Spec 驱动流程 / `N-ENG-010` 发布说明质量门禁：三份规格状态由「规划中 · 待实现」更正为「已实现」（分别落地于 v0.9.9 / v0.9.9 / v0.9.19–0.9.20，规格登记滞后于实现的漂移清零）\n- `N-ENG-001` / `N-ENG-009` 随本版落地置「已实现」；SPEC-INDEX 五行同步；README「当前版本」行由 v0.9.10 滞后值更正为 v0.10.0\n## 里程碑\n- M1 全部交付判据达成，版本按路线图落 v0.10.0；后续主线转入 M2（三插件核心能力 + vcdiff 增量 + Phase 2 蓝图调用链）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.22/abyss-tools-v0.9.22.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.0/abyss-tools-v0.10.0.apk",
     "sizeBytes": 14829717,
-    "sha256": "90eb69d6198c2bcf1d778546e6176a1ad78ed0639787e4f12bb422a5c512a5be"
+    "sha256": "1b31ab21f060799f6b53ee6f3b7b7e0df9e463ad4df3c6327bc94460e3e5648b"
   },
   "patch": null,
-  "commitSha": "5476634e1ffe782250e256c89ff19a5c39119ede"
+  "commitSha": "d7e9764d072d9d51cf53353831ff698bfa05ccf9"
 }
