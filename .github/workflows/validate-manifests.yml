@@ -32,3 +32,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 tools/validate_manifests.py
+
+      # ── N-ENG-010 发布说明质量门禁（B-05 收口：发布仓侧强制执行 ——
+      #    原先根本不调用该脚本；与主仓 publish_release.py 发布前置门禁
+      #    同一入口，主仓 tools/ 同步副本）──
+      - name: Release-Notes Lint (N-ENG-010)
+        run: |
+          python3 tools/validate_release_notes.py version.json
+          python3 tools/validate_release_notes.py changelog.json --entry-latest
