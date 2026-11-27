@@ -1,21 +1,49 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-27T12:43:19Z",
+  "generatedAt": "2026-11-27T13:27:34Z",
   "latest": {
-    "versionName": "0.9.21",
-    "versionCode": 44,
-    "tag": "v0.9.21",
+    "versionName": "0.9.22",
+    "versionCode": 45,
+    "tag": "v0.9.22",
     "date": "2026-11-27",
-    "title": "v0.9.21 —— - fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行",
+    "title": "v0.9.22 —— # v0.9.22 · UI-001 文案精简 + 深挖缺陷修复批",
     "notes": [
-      "- fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行",
-      "- 本版未附 docs/release-notes/v0.9.21.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG",
-      "- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）"
+      "# v0.9.22 · UI-001 文案精简 + 深挖缺陷修复批",
+      "> 发布日期：2026-11-27 · 里程碑：**M1** · versionCode 45",
+      "## UI-001 · 功能文案精简（零说明视觉）",
+      "- `ToolCatalog` 数据模型瘦身：`ToolCategory.description`（10 条）与 `ToolDef.summary`（27 条）字段与字面量全删，功能卡 = 图标 + 单行标题 + 状态色点",
+      "- `ListRowCard` / `SectionHeader` 组件去 summary/subtitle 渲染；`StatusChip` 文字徽章 → 8dp 状态色点（contentDescription 朗读保留语义，TalkBack 无未加标签节点）",
+      "- NavHub 占位页五类长说明、各功能页说明卡 / 教程段 / helper 约 150 段清零；「框架预览 / 首个 APK 发布前」过期话术清零（B-19）",
+      "- 新增 `tools/ui_text_budget.py` CI 门禁（装饰性长文案 ≥18 字且含句号/分号/破折号 → 0 容忍），白名单 135 条错误/授权/高危确认/免责文案 + 行内 keep-text 豁免",
+      "- 业务键零变化：路由 token / 偏好键 / 补丁通道 URL / `ToolCatalog.byId` 全量保留",
+      "## 深挖缺陷修复（「更艰难的找 bug」第一轮）",
+      "- NB-1：`MirrorRouter` 镜像探测线程 NPE（ConcurrentHashMap 不容 null 值，「不可达记录」契约从未成立）→ 哨兵收集归一化",
+      "- NB-2：`InstallEventBus` 幂等语义文档/测试/实现三方矛盾澄清（mode 每次如实更新是降级可见特性）",
+      "- NB-3：病毒审计日志三缺陷 —— 并发水位漂移 / 导出静默丢弃轮转历史（审计链断档）/ 死常量",
+      "- B-25：签名公钥常量「正式钥 vs 开发测试钥」矛盾注释清除",
+      "- B-27：补丁备份区 GC（保留最近 3 份，`clearCache` 级联）",
+      "- B-29：`SignalOverlayService` / `FloatingBallService` 广播注册补 `RECEIVER_NOT_EXPORTED`（Android 13+）",
+      "## 前序批次（v0.9.20/21 已随通道发布）",
+      "- B-04 验签字节保真 / B-05 发布说明门禁闭合 / B-06+B-18 agent 信任链 / B-08+B-17 Shell 超时语义 / B-12 原子落盘 / B-13 PendingIntent 隔离 / B-14 令牌白名单统一"
     ],
-    "markdown": "- - fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行\n- - 本版未附 docs/release-notes/v0.9.21.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- - 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.21"
+    "markdown": "- # v0.9.22 · UI-001 文案精简 + 深挖缺陷修复批\n- > 发布日期：2026-11-27 · 里程碑：**M1** · versionCode 45\n- ## UI-001 · 功能文案精简（零说明视觉）\n- `ToolCatalog` 数据模型瘦身：`ToolCategory.description`（10 条）与 `ToolDef.summary`（27 条）字段与字面量全删，功能卡 = 图标 + 单行标题 + 状态色点\n- `ListRowCard` / `SectionHeader` 组件去 summary/subtitle 渲染；`StatusChip` 文字徽章 → 8dp 状态色点（contentDescription 朗读保留语义，TalkBack 无未加标签节点）\n- NavHub 占位页五类长说明、各功能页说明卡 / 教程段 / helper 约 150 段清零；「框架预览 / 首个 APK 发布前」过期话术清零（B-19）\n- 新增 `tools/ui_text_budget.py` CI 门禁（装饰性长文案 ≥18 字且含句号/分号/破折号 → 0 容忍），白名单 135 条错误/授权/高危确认/免责文案 + 行内 keep-text 豁免\n- 业务键零变化：路由 token / 偏好键 / 补丁通道 URL / `ToolCatalog.byId` 全量保留\n- ## 深挖缺陷修复（「更艰难的找 bug」第一轮）\n- NB-1：`MirrorRouter` 镜像探测线程 NPE（ConcurrentHashMap 不容 null 值，「不可达记录」契约从未成立）→ 哨兵收集归一化\n- NB-2：`InstallEventBus` 幂等语义文档/测试/实现三方矛盾澄清（mode 每次如实更新是降级可见特性）\n- NB-3：病毒审计日志三缺陷 —— 并发水位漂移 / 导出静默丢弃轮转历史（审计链断档）/ 死常量\n- B-25：签名公钥常量「正式钥 vs 开发测试钥」矛盾注释清除\n- B-27：补丁备份区 GC（保留最近 3 份，`clearCache` 级联）\n- B-29：`SignalOverlayService` / `FloatingBallService` 广播注册补 `RECEIVER_NOT_EXPORTED`（Android 13+）\n- ## 前序批次（v0.9.20/21 已随通道发布）\n- B-04 验签字节保真 / B-05 发布说明门禁闭合 / B-06+B-18 agent 信任链 / B-08+B-17 Shell 超时语义 / B-12 原子落盘 / B-13 PendingIntent 隔离 / B-14 令牌白名单统一",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.22"
   },
   "history": [
+    {
+      "versionName": "0.9.21",
+      "versionCode": 44,
+      "tag": "v0.9.21",
+      "date": "2026-11-27",
+      "title": "v0.9.21 —— - fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行",
+      "notes": [
+        "- fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行",
+        "- 本版未附 docs/release-notes/v0.9.21.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG",
+        "- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）"
+      ],
+      "markdown": "- - fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行\n- - 本版未附 docs/release-notes/v0.9.21.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- - 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.21"
+    },
     {
       "versionName": "0.9.20",
       "versionCode": 43,
@@ -329,18 +357,6 @@
       ],
       "markdown": "- v0.9.0 —— 引力家族（组件银河）：黑洞时钟之外新增三个 Canvas 绘制桌面组件 —— 引力电池（吸积环即电量刻度：≥50% 主题色 / 20..49% 泛琥珀 / <20% 泛红逐通道混色；充电时极向喷流 20 分钟周期呼吸脉动；ACTION_BATTERY_CHANGED 粘性广播渲染时只读快照，零权限）、星轨日历（行星沿椭圆轨道绕黑洞公转一年：年积日折算轨道角 + 十二月刻度 + 今日亮星 + 年内进度；纯 Calendar 折算）、深渊引力仪（内存 / 存储双引力环实时读数 + 引力尘埃粒子沿扫过弧段散布；ActivityManager / StatFs 免权限读取）；AbyssWidgetFamily 家族注册表（整分闹钟链一跳喂饱全部四家族，开机重排与「立即刷新」同口径；四家族全部无实例才拆链）；组件工坊重构为「组件银河」画廊（引力家族三卡片真实数据驱动动画预览 + 各自 requestPinAppWidget 固定通道 + 全局主题统辖四组件）；WidgetSpace 深空底共享层（星场 / 小黑洞绘制收敛一处）；三个纯数学对象（GravityBatteryMath / StellarCalendarMath / AbyssGaugeMath）零 Android 依赖可单测\n- v0.9.0 —— 隐私与管控（feature:syspower 第四域，Shizuku 授权再深挖）：权限审计（dumpsys package 运行时权限解析 → 危险权限白名单交集 → 逐项 pm grant / revoke + 「回收全部已授予」批量顺序执行 executeAll —— 半程失败如实报错不伪装成功）；敏感操作记录（appops query-op 相机 / 麦克风 / 定位 / 剪贴板 —— 谁在用、什么模式，一次看清）；Doze 白名单（dumpsys deviceidle whitelist 读写 + 包名增删，系统内置条目拒绝时透传原始错误）；流量策略（cmd netpolicy 全局流量节省开关 + 按 uid 拒绝 / 解除后台流量 —— uid 经 PackageManager 解析）；控制中心标签化重构（显示 / 电源 / 授权 / 隐私管控 M3 SegmentedButton 四页签，会话日志全页签常驻）\n- v0.9.0 —— 任务蓝图双模式调度：BlueprintSchedule 双字段互斥（intervalMinutes 间隔循环 / dailyAtMinute 每日定时，日内分钟 0..1439 —— 旧 JSON 向前兼容）；SchedulePlanner 纯排程数学（今天未到排今天 / 已过排明天 / 恰好此刻排明天防双触发，跨月跨年经 Calendar 折算，单测覆盖闰年与午夜边界）；到期接收器重排按蓝图当前 schedule 收敛（intent 不再携带间隔 extra —— 模式变更 / 删除自然生效）；编辑页调度模式 SegmentedButton 三档 + M3 TimePicker（ModalBottomSheet 选时刻，24 小时制）；列表徽章 / 调度清单统一 scheduleLabel 人话\n- v0.9.0 —— M3 组件补全（把「宣称用过」变成「真的用了」）：应用管理器搜索升级 M3 SearchBar（展开态搜索视图：最近 6 条关键词历史落盘 + 实时匹配应用行直达详情，系统返回键先收搜索视图）；插件中心 M3 PullToRefreshBox 下拉刷新（与既有 retryKey 索引重取管线共用，数据态刷新列表原地保留）；终端历史 M3 InputChip 化（FlowRow 换行布局，整枚点击回填 / 尾部 × 单条删除 —— CommandHistory 新增 remove）+ TooltipBox 图标按钮长按提示；设置页 SnackbarHost 动作反馈（缓存清除等无反馈动作补齐人话回执）\n- v0.9.0 —— 文档与渠道口径修正：AbyssChannels / AGENTS.md 仓库矩阵更正（七个插件仓的旧口径 → 三个引擎级 + 十三仓归档）；ToolCatalog 组件工坊 / 系统控制中心 / 任务蓝图条目摘要更新；AppInfo 0.9.0（code 20）",
       "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.0"
-    },
-    {
-      "versionName": "0.8.5",
-      "versionCode": 22,
-      "tag": "v0.8.5",
-      "date": "2026-11-15",
-      "title": "v0.8.5 —— feat(designsystem): 液滴手感三处调优 + M3 档容器色覆写",
-      "notes": [
-        "feat(designsystem): 液滴手感三处调优 + M3 档容器色覆写"
-      ],
-      "markdown": "- feat(designsystem): 液滴手感三处调优 + M3 档容器色覆写",
-      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.5"
     }
   ]
 }
