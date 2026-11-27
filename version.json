@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.9.20",
-  "versionCode": 43,
-  "tag": "v0.9.20",
-  "publishedAt": "2026-11-27T12:23:00Z",
+  "versionName": "0.9.21",
+  "versionCode": 44,
+  "tag": "v0.9.21",
+  "publishedAt": "2026-11-27T12:43:19Z",
   "channel": "stable",
-  "notes": "docs(spec): M1 收尾 — N-APP-001/002/003 构建器生态规格同步到已实现 (v0.9.19)",
+  "notes": "- fix(release): B-05 发布说明门禁闭合 —— 双跳过消除 + 共用门禁 + notes 保行\n- 本版未附 docs/release-notes/v0.9.21.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.20/abyss-tools-v0.9.20.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.9.21/abyss-tools-v0.9.21.apk",
     "sizeBytes": 14846101,
-    "sha256": "69106b1200b12f94c19389f99fe94a92622731b884edb37685effa9166f10eca"
+    "sha256": "dd63bd8f818a13cdb42c151710634624fa41196db5fec10a24c1aa531f72fbdf"
   },
   "patch": null,
-  "commitSha": "36a1f4a12e7cc8ef7f68e3911215159ed16a2886"
+  "commitSha": "320488779a92a20a528cc50d28915979641c5848"
 }
