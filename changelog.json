@@ -1,19 +1,31 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-27T12:06:48Z",
+  "generatedAt": "2026-11-27T12:23:00Z",
   "latest": {
-    "versionName": "0.9.19",
-    "versionCode": 42,
-    "tag": "v0.9.19",
+    "versionName": "0.9.20",
+    "versionCode": 43,
+    "tag": "v0.9.20",
     "date": "2026-11-27",
-    "title": "v0.9.19 —— Merge pull request #21 from abyss-tool/fix/p0-hotfix-b04-b08",
+    "title": "v0.9.20 —— docs(spec): M1 收尾 — N-APP-001/002/003 构建器生态规格同步到已实现 (v0.9.19)",
     "notes": [
-      "Merge pull request #21 from abyss-tool/fix/p0-hotfix-b04-b08"
+      "docs(spec): M1 收尾 — N-APP-001/002/003 构建器生态规格同步到已实现 (v0.9.19)"
     ],
-    "markdown": "- Merge pull request #21 from abyss-tool/fix/p0-hotfix-b04-b08",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.19"
+    "markdown": "- docs(spec): M1 收尾 — N-APP-001/002/003 构建器生态规格同步到已实现 (v0.9.19)",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.20"
   },
   "history": [
+    {
+      "versionName": "0.9.19",
+      "versionCode": 42,
+      "tag": "v0.9.19",
+      "date": "2026-11-27",
+      "title": "v0.9.19 —— Merge pull request #21 from abyss-tool/fix/p0-hotfix-b04-b08",
+      "notes": [
+        "Merge pull request #21 from abyss-tool/fix/p0-hotfix-b04-b08"
+      ],
+      "markdown": "- Merge pull request #21 from abyss-tool/fix/p0-hotfix-b04-b08",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.19"
+    },
     {
       "versionName": "0.9.18",
       "versionCode": 41,
@@ -327,18 +339,6 @@
       ],
       "markdown": "- fix(designsystem): Motion 状态包装 + getValue 委托 —— asState 扩展本版本不存在",
       "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.4"
-    },
-    {
-      "versionName": "0.8.3",
-      "versionCode": 20,
-      "tag": "v0.8.3",
-      "date": "2026-11-15",
-      "title": "v0.8.3 —— fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
-      "notes": [
-        "fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM"
-      ],
-      "markdown": "- fix(infra): CI Gradle 堆 2560m → 4g —— v0.8.0 六模块扩容后 packageRelease OOM",
-      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.8.3"
     }
   ]
 }
