@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.10.5",
-  "versionCode": 51,
-  "tag": "v0.10.5",
-  "publishedAt": "2026-11-28T14:56:07Z",
+  "versionName": "0.10.6",
+  "versionCode": 52,
+  "tag": "v0.10.6",
+  "publishedAt": "2026-11-28T15:15:19Z",
   "channel": "stable",
-  "notes": "- ci: 单测报告失败可读 + PR 标题 Conventional Commits 门禁\n- 本版未附 docs/release-notes/v0.10.5.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
+  "notes": "# v0.10.6 发布要点\n## 🐛 修复\n- **Shizuku 授权「点了没反应」修复（NB-SH-001~008）**：`requestPermission()` 旧实现返回 Unit 且 `runCatching` 吞掉全部异常（binder 未送达抛 `IllegalStateException` / pre-v11 服务端抛 RuntimeException / 勾过「拒绝且不再询问」不弹窗）——用户看到的就是点「立即授权」零反馈。现按官方 `api:13.1.5` README 契约顺序分流六种前置状态（已授权 / 已提交请求 / binder 未送达 / 服务端过旧 / 永久拒绝 / 发送失败），每种都给人话提示 + 自愈动作（自动打开 Shizuku 管理器 / 升级下载页）；授权回调留痕（requestCode / grantResult / 失败原因）进诊断日志；监听器「先摘后挂」幂等注册且前置到请求之前（晚注册丢回调）；引导页新增「去授权管理」按钮（永久拒绝后的唯一可达路径）。\n## 🔧 变更\n- 新增 `ShizukuPermissionOutcome` / `ShizukuPermissionGuide`（core:shell 纯 JVM，零 Android 依赖）+ 5 例单测覆盖全部分支。\n- 修正 `core/shell/build.gradle.kts` 中关于 ShizukuProvider 清单合并的错误注释（原注释会误导维护者删掉 provider 复现 v0.7.0 P0 闪退）。\n- `() -> Unit` 授权回调签名不变：19 个功能页的 `onRequestShizukuPermission` 传递链零改动。\n## ✅ 验收\n- 纯 JVM 单测：`ShizukuPermissionGuideTest` 5 例（全 outcome 文案非空 / 三类失败引导管理器 / legacy 走下载页 / 已授权不开弹窗语义）。\n- 真机复测清单见审计报告第五节（启动 Shizuku → 弹窗 → 允许解锁；停服务 / 永久拒绝两个反向用例有兜底路径）。",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.5/abyss-tools-v0.10.5.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.6/abyss-tools-v0.10.6.apk",
     "sizeBytes": 14897937,
-    "sha256": "d1465ad8c245a19a83e74428adbe8b3b44d468514cd78053db6be1aa169213db"
+    "sha256": "face757b6ff828882e457b87a581c3501465699b6bebc5f8b3278121d3de5778"
   },
   "patch": null,
-  "commitSha": "41f416f67d5e6b838fe6e55c9529819fca508216"
+  "commitSha": "077927924cd503d411a100a4caa24d259098c69d"
 }
