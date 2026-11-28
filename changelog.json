@@ -1,21 +1,35 @@
 {
   "schema": "abyss-changelog-v1",
-  "generatedAt": "2026-11-28T15:31:05Z",
+  "generatedAt": "2026-11-28T15:46:33Z",
   "latest": {
-    "versionName": "0.10.7",
-    "versionCode": 53,
-    "tag": "v0.10.7",
+    "versionName": "0.10.8",
+    "versionCode": 54,
+    "tag": "v0.10.8",
     "date": "2026-11-28",
-    "title": "v0.10.7 —— - feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步",
+    "title": "v0.10.8 —— - Merge PR #40: fix(review) 审查缺口收尾（v0.10.7）",
     "notes": [
-      "- feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步",
-      "- 本版未附 docs/release-notes/v0.10.7.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG",
+      "- Merge PR #40: fix(review) 审查缺口收尾（v0.10.7）",
+      "- 本版未附 docs/release-notes/v0.10.8.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG",
       "- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）"
     ],
-    "markdown": "- feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步\n- 本版未附 docs/release-notes/v0.10.7.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
-    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.10.7"
+    "markdown": "- Merge PR #40: fix(review) 审查缺口收尾（v0.10.7）\n- 本版未附 docs/release-notes/v0.10.8.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
+    "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.10.8"
   },
   "history": [
+    {
+      "versionName": "0.10.7",
+      "versionCode": 53,
+      "tag": "v0.10.7",
+      "date": "2026-11-28",
+      "title": "v0.10.7 —— - feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步",
+      "notes": [
+        "- feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步",
+        "- 本版未附 docs/release-notes/v0.10.7.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG",
+        "- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）"
+      ],
+      "markdown": "- feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步\n- 本版未附 docs/release-notes/v0.10.7.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
+      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.10.7"
+    },
     {
       "versionName": "0.10.6",
       "versionCode": 52,
@@ -468,18 +482,6 @@
       ],
       "markdown": "- feat(m1): N-SEC-001 清单签名验签 + N-EXP-003 诊断日志 + 工程门禁 (#10)",
       "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.9"
-    },
-    {
-      "versionName": "0.9.8",
-      "versionCode": 31,
-      "tag": "v0.9.8",
-      "date": "2026-11-21",
-      "title": "v0.9.8 —— refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
-      "notes": [
-        "refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）"
-      ],
-      "markdown": "- refactor(core): 删除冗余渲染安全模式断路器与管线探针（v0.9.6）",
-      "releaseUrl": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/tag/v0.9.8"
     }
   ]
 }
