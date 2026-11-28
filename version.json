@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.10.9",
-  "versionCode": 55,
-  "tag": "v0.10.9",
-  "publishedAt": "2026-11-28T15:56:01Z",
+  "versionName": "0.10.10",
+  "versionCode": 56,
+  "tag": "v0.10.10",
+  "publishedAt": "2026-11-28T16:11:20Z",
   "channel": "stable",
-  "notes": "# v0.10.9 发布要点\n## 🔒 变更（root 能力移除 · 分支合入）\n- **移除 `SHIZUKU_ROOT` 能力**：本应用定位免 Root，`Capability` 枚收敛为 8 项正交能力（自身组件 / 无障碍 / Shizuku / 安装未知应用 / 悬浮窗 / 应用观察 / Dhizuku / 设备管理员）；档位判定与门禁严格只依据 Shizuku / Dhizuku / 设备管理员等正交能力集合，不再有「Shizuku 服务端以 root 运行」这一高危二次门禁维度。\n- **Linux 运行环境多模式收敛**：移除「root 域」模式（PRoot 域 + Shizuku 域两档保留），与免 Root 定位对齐。\n- **探测层同步**：`AndroidPrivilegeProbe` 不再扇出 `SHIZUKU_ROOT` 的能力 / 原因码；「去授权」落点（CapabilityGuideIntents）同步收敛。\n## 📖 规格同步\n- `ARC-011`（权限能力与档位模型）FR-001 修订：8 项正交能力定稿，明确「本应用定位免 Root，不设 root 能力」。\n- `FEAT-039` 同步修订；`PrivilegeTierTest` 移除「Shizuku root 不单独升档」用例（能力已不存在）。\n## ✅ 验收\n- 全仓 grep `SHIZUKU_ROOT` 仅剩 ARC-011 规格的说明性文字（「原 SHIZUKU_ROOT 已移除」）。\n- 五档判定（BASIC / ADVANCED / SENIOR / ABYSS_MAX / ABYSS_ULTRA）与 27 条工具门禁矩阵零变化（root 能力本就不参与升档与门禁公式）。\n- 本地 `--jvm` 四道门禁全绿；编译验证走 GitHub Actions CI。",
+  "notes": "# v0.10.10 发布要点\n## ✨ 新功能（N-PRV-001 隐私守卫占位转正）\n- **防截屏 FLAG_SECURE（零授权）**：隐私守卫页 / 设置页「权限」分区双入口开关，状态持久化（SettingsRepository）；MainActivity 窗口首帧即按开关生效，切换即时重算窗口 flag —— 系统截图 / 录屏 / 最近任务缩略图无法捕获本 App 内容。\n- **敏感操作时序监控（appops query-op 记账差分）**：一次采集 5 项敏感 op（相机 / 麦克风 / 精确定位 / 粗定位 / 剪贴板）记账快照，与上次差分出「新记账 / 模式变化 / 条目消失」三类事件；时序仅落本地（内存上限 200 条 + 诊断日志本地滚动文件），页内显式声明「仅存本机，不上传」。\n- **敏感权限审计复用**：按包名查询 dumpsys 危险权限声明与授予态 —— 解析层直接复用 feature:syspower 的 `PermissionAuditCommands` / `SensitiveOpsCommands`（FR-003 不重复实现）。\n## 🔧 变更\n- 新增 `feature:privacyguard` 模块（Compose UI + 纯 JVM 时序引擎 + 9 例单测）；`settings.gradle.kts` / `app` 依赖 / `AbyssRoot` 路由三处同步。\n- `ToolCatalog`：privacy-guard 由 FRAMEWORK 占位转正 BUILT_IN（FR-004），access 三模式（防护开关零权限 / 权限审计与时序监控需 Shizuku）。\n- 规格 N-PRV-001 状态转「已实现（v0.10.10）」；QA-008 追溯矩阵 + SPEC-INDEX 同步。\n## ✅ 验收\n- 纯 JVM 单测 `PrivacyGuardCommandsTest` 9 例：差分三类事件、首次采集零事件、容量截断、采集命令与 QUERY_OPS 对齐、注入门禁（非法 op 名 fail-closed 抛出）。\n- 开关重启持久；`ui_text_budget` 通过（页内短文案无长文本标点）。\n- 本地 `--jvm` 四道门禁全绿；编译验证走 GitHub Actions CI。",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.9/abyss-tools-v0.10.9.apk",
-    "sizeBytes": 14897937,
-    "sha256": "229c1b5344c8efc3f4f110620a6a6eb94d3e52b40cba5f89abe4a8f0ec1d5f3f"
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.10/abyss-tools-v0.10.10.apk",
+    "sizeBytes": 14930705,
+    "sha256": "1a74e21d066026cd2ca814058e536595177768eb443958d089fa83c85d8c7daa"
   },
   "patch": null,
-  "commitSha": "72754533b2727f8092a7aa807faabca99ff34751"
+  "commitSha": "4a502f48b69ade383cf88326d7ec0d8ec5ce5276"
 }
