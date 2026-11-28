@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.10.7",
-  "versionCode": 53,
-  "tag": "v0.10.7",
-  "publishedAt": "2026-11-28T15:31:05Z",
+  "versionName": "0.10.8",
+  "versionCode": 54,
+  "tag": "v0.10.8",
+  "publishedAt": "2026-11-28T15:46:33Z",
   "channel": "stable",
-  "notes": "- feat(t6): N-EXP-001 索引透明度宿主侧 —— 透明字段解析 + 校验 + 夹具同步\n- 本版未附 docs/release-notes/v0.10.7.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
+  "notes": "- Merge PR #40: fix(review) 审查缺口收尾（v0.10.7）\n- 本版未附 docs/release-notes/v0.10.8.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.7/abyss-tools-v0.10.7.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.8/abyss-tools-v0.10.8.apk",
     "sizeBytes": 14897937,
-    "sha256": "7e765576b8a14df34c1c4366adf0a078a6929e7a997917ce90652a004919240a"
+    "sha256": "8aef8cbcf31daed2e284d648872ae82d98300b45fc77835101da3b23d509b22f"
   },
   "patch": null,
-  "commitSha": "3e1cc391a11fd4ad0d705f9c7b3b28b3e77036ec"
+  "commitSha": "b3128a1a961b524135a7548141a1058d031d125b"
 }
