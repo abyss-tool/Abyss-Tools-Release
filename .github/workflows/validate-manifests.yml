@@ -25,8 +25,15 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install pynacl (N-SEC-001 清单验签)
-        run: pip install --quiet pynacl
+      # ── 同类缺陷防御（B-01，与插件中心 hub-ci 同款收敛）：门禁脚本先过
+      #    语法编译再跑业务校验 —— tools/*.py 的 NameError 级缺陷不再能
+      #    以「清单数据恰好合法」的形态溜进 main。
+      - name: Python syntax pre-check (py_compile all tools)
+        run: python3 -m py_compile tools/*.py
+
+      # pynacl：N-SEC-001 清单验签；pytest：tools 门禁脚本常驻单测。
+      - name: Install pynacl + pytest (manifest signature verification & unit tests)
+        run: pip install --quiet pynacl pytest
 
       - name: Validate version / patches / changelog + detached signatures
         env:
@@ -40,3 +47,9 @@ jobs:
         run: |
           python3 tools/validate_release_notes.py version.json
           python3 tools/validate_release_notes.py changelog.json --entry-latest
+
+      # ── 门禁脚本自身的 pytest 常驻单测：三清单一致性逐分支 fail-closed
+      #    + 签名强制/错签拒收（生成密钥证明 fail-closed，不依赖 secret；
+      #    绿色验签路径由发布流水线以真实材料覆盖）。
+      - name: Unit tests (tools gate scripts)
+        run: python3 -m pytest tests/ -v
