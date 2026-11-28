@@ -1,16 +1,16 @@
 {
   "schema": "abyss-version-v1",
-  "versionName": "0.10.8",
-  "versionCode": 54,
-  "tag": "v0.10.8",
-  "publishedAt": "2026-11-28T15:46:33Z",
+  "versionName": "0.10.9",
+  "versionCode": 55,
+  "tag": "v0.10.9",
+  "publishedAt": "2026-11-28T15:56:01Z",
   "channel": "stable",
-  "notes": "- Merge PR #40: fix(review) 审查缺口收尾（v0.10.7）\n- 本版未附 docs/release-notes/v0.10.8.md 详细说明 —— 变更明细见主仓提交历史与 CHANGELOG\n- 通道 stable · 清单 detached 签名（N-SEC-001）· APK 发布者指纹门禁（fail-closed）",
+  "notes": "# v0.10.9 发布要点\n## 🔒 变更（root 能力移除 · 分支合入）\n- **移除 `SHIZUKU_ROOT` 能力**：本应用定位免 Root，`Capability` 枚收敛为 8 项正交能力（自身组件 / 无障碍 / Shizuku / 安装未知应用 / 悬浮窗 / 应用观察 / Dhizuku / 设备管理员）；档位判定与门禁严格只依据 Shizuku / Dhizuku / 设备管理员等正交能力集合，不再有「Shizuku 服务端以 root 运行」这一高危二次门禁维度。\n- **Linux 运行环境多模式收敛**：移除「root 域」模式（PRoot 域 + Shizuku 域两档保留），与免 Root 定位对齐。\n- **探测层同步**：`AndroidPrivilegeProbe` 不再扇出 `SHIZUKU_ROOT` 的能力 / 原因码；「去授权」落点（CapabilityGuideIntents）同步收敛。\n## 📖 规格同步\n- `ARC-011`（权限能力与档位模型）FR-001 修订：8 项正交能力定稿，明确「本应用定位免 Root，不设 root 能力」。\n- `FEAT-039` 同步修订；`PrivilegeTierTest` 移除「Shizuku root 不单独升档」用例（能力已不存在）。\n## ✅ 验收\n- 全仓 grep `SHIZUKU_ROOT` 仅剩 ARC-011 规格的说明性文字（「原 SHIZUKU_ROOT 已移除」）。\n- 五档判定（BASIC / ADVANCED / SENIOR / ABYSS_MAX / ABYSS_ULTRA）与 27 条工具门禁矩阵零变化（root 能力本就不参与升档与门禁公式）。\n- 本地 `--jvm` 四道门禁全绿；编译验证走 GitHub Actions CI。",
   "download": {
-    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.8/abyss-tools-v0.10.8.apk",
+    "url": "https://github.com/abyss-tool/Abyss-Tools-Release/releases/download/v0.10.9/abyss-tools-v0.10.9.apk",
     "sizeBytes": 14897937,
-    "sha256": "8aef8cbcf31daed2e284d648872ae82d98300b45fc77835101da3b23d509b22f"
+    "sha256": "229c1b5344c8efc3f4f110620a6a6eb94d3e52b40cba5f89abe4a8f0ec1d5f3f"
   },
   "patch": null,
-  "commitSha": "b3128a1a961b524135a7548141a1058d031d125b"
+  "commitSha": "72754533b2727f8092a7aa807faabca99ff34751"
 }
